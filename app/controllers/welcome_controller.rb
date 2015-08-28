@@ -3,18 +3,24 @@ require 'forecast_io'
 
   def index
 
-  	#Get Current Location on Page Load
-  	myLocation = cookies[:lat_lng].to_s.split('|')
-  	latitude = myLocation[0]
-  	longitude = myLocation[1]
+	latitude   = 41.8369
+  	longitude  = -87.6847
 
-  	#Forecast.io API info
+  	lat_lng = cookies[:lat_lng]
+  	myLocation = lat_lng.to_s.split('|')
+
   	ForecastIO.api_key = '489e6541e3f4c8d407a3152e17f8e8d3'
+	
+	latitude   = myLocation[0]
+  	longitude  = myLocation[1]
 	forecast   = ForecastIO.forecast(latitude, longitude) 
   	@timezone  = forecast.timezone
 
+ 
+
  	#Current Weather Data
  	currentForecast 				= forecast.currently # gives you the current forecast datapoint
+
  	@currentApparentTemp			= currentForecast.apparentTemperature.round.to_s + "°"
  	@currentCloudCover				= currentForecast.cloudCover
  	@currentDewPoint				= currentForecast.dewPoint
@@ -31,7 +37,6 @@ require 'forecast_io'
   	@currentVisibility				= currentForecast.visibility
   	@currentWindBearing				= currentForecast.windBearing
   	@currentWindSpeed 				= currentForecast.windSpeed
-
   	#Reformat forecast.io icon strings to be readable by skycons (upcase and underscores instead of dash)
  	currentIcon					= currentForecast.icon.upcase
 	if currentIcon 	  == "PARTLY-CLOUDY-DAY"
@@ -57,9 +62,9 @@ require 'forecast_io'
 	end
 
 
-	#Daily Weather Data
-	@dailyForecastJSON 	= forecast.daily
-	dailyForecast 	 	= forecast.daily
+  #Daily Weather Data
+  @dailyForecastJSON 	= forecast.daily
+  dailyForecast 	 	= forecast.daily
 
 
 
