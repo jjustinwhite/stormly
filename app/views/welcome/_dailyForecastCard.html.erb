@@ -14,7 +14,7 @@
   <div class="card-block card-inverse">
     <p><canvas id="<%="icon#{@skyconCount}"%>" class="card-img-top"  width="128" height="128"></canvas></p>
 
-    <h4 class="card-title"><%= @dailyHiTemp[@count] %> | <%= @dailyLoTemp[@count] %></h4>
+    <h4 class="card-title"><%= @dailyHiTemp[@count] %> &nbsp; <small id="loTemp"><%= @dailyLoTemp[@count] %></small></h4>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"> feels like a high of <%= @dailyApparentHiTemp[@count] %><br> with a low of <%= @dailyApparentLoTemp[@count] %></li>
