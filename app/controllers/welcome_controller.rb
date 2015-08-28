@@ -20,7 +20,7 @@ require 'forecast_io'
 
 	 
 
-	 	#Current Weather Data
+	#Current Weather Data
 	 	currentForecast 				= forecast.currently # gives you the current forecast datapoint
 
 	 	@currentApparentTemp			= currentForecast.apparentTemperature.round.to_s + "°"
