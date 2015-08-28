@@ -5,7 +5,7 @@ require 'forecast_io'
 
 	latitude   = 41.8369
   	longitude  = -87.6847
-
+  	#update cookie
   	lat_lng = cookies[:lat_lng]
   	myLocation = lat_lng.to_s.split('|')
 
@@ -15,8 +15,6 @@ require 'forecast_io'
   	longitude  = myLocation[1]
 	forecast   = ForecastIO.forecast(latitude, longitude) 
   	@timezone  = forecast.timezone
-
- 
 
  	#Current Weather Data
  	currentForecast 				= forecast.currently # gives you the current forecast datapoint
