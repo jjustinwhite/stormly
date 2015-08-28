@@ -3,14 +3,9 @@ require 'forecast_io'
 
   def index
 
-
   end
 
   def setgeo
-
-
-
-  	puts "nihao"
 
   	lat_lng = cookies[:lat_lng]
   	# lat_lng = LocalStorage[:lat_lng]

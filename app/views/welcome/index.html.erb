@@ -1,23 +1,19 @@
-<%- unless @lat_lng %>
+<% unless @lat_lng %>
   <script>
     getGeoLocation();
   </script>
-<%- end %>
+<% end %>
+
 
 <div class="row">
-
-  <h1 class="text-center">Acquiring Current Location</h1>
+  <h1 class="text-center">Acquiring Current Location...</h1>
   <p class="text-center"><i class="fa fa-spinner fa-spin fa-5x"></i></p>
-
 </div>
 
 <script type="text/javascript">
     setTimeout(function (){
-
-   window.location.href="/welcome/setgeo"  // put your correct path in a string here
-
-  }, 5000); 
-  
+     window.location.href="/welcome/setgeo" 
+  }, 1000); 
 </script>
 
 
