@@ -1,6 +1,3 @@
-<div id="map-container"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=650x650&sensor=false&zoom=13&center=#{@latitude}%2C#{@longitude}&visual_refresh=true&scale=2&key=AIzaSyCAaruC-8uY0mbl_eXQRT0Co4ou_EKr9cI", :id =>"map", :class => "" %></div> 
-<!-- END Google Maps Background-->
-
 
 
 <div class="row">
@@ -21,9 +18,12 @@
   </div>
 
   <div class="col-sm-6">
-    <%= render "welcome/todayForecastCard" %>
-    <% 6.times do %>
+    <% @count = 0 %>
+    <% @skyconCount = 2 %>
+    <% 7.times do %>
       <%= render "welcome/dailyForecastCard" %>
+      <% @count = @count + 1 %>
+      <% @skyconCount = @skyconCount + 1 %>
     <% end %>
   </div>
 
@@ -37,7 +37,14 @@
   var skycons = new Skycons({"color": "AliceBlue"});
 
   skycons.add("icon1", Skycons.<%= @currentSkycon %>);
-  skycons.add("icon2", Skycons.<%= @dailySkycon %>);
+
+  skycons.add("icon2", Skycons.<%= @dailySkycon[0] %>);
+  skycons.add("icon3", Skycons.<%= @dailySkycon[1] %>);
+  skycons.add("icon4", Skycons.<%= @dailySkycon[2] %>);
+  skycons.add("icon5", Skycons.<%= @dailySkycon[3] %>);
+  skycons.add("icon6", Skycons.<%= @dailySkycon[4] %>);
+  skycons.add("icon7", Skycons.<%= @dailySkycon[5] %>);
+  skycons.add("icon8", Skycons.<%= @dailySkycon[6] %>);
  
   skycons.play();
 

@@ -1,38 +1,24 @@
 <div class="card" style="background-color: #446AAA; border-color: #446AAA;">
-
   <div class="card-block text-center">
-    <h4 class="card-title"><%= @timezone %><br /> <small> currently <%= @currentSummary %></small></h4>  <!-- TO-DO change me from timezone to city -->
+    <h3 class="card-title"><i class="fa fa-map-pin"></i>&nbsp; <%= @timezone %><br /> <small> currently <%= @currentSummary %></small></h3>  <!-- TO-DO change me from timezone to city -->
     <ul class="list-group list-inline">
       <li><h6 class="card-subtitle large"> <%= @currentTemp %> </h6></li>
       <li><canvas id="icon1" class="card-img-top"  width="128" height="128"></canvas></li>
     </ul>
     <p class="card-text">
-      <%= @dailySummary %>
+      <%= @weekSummary %>
     </p>
   </div>
 
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"> Apparent Temp: <%= @currentApparentTemp %> </li>
-    <li class="list-group-item"> Cloud Cover: <%= @currentCloudCover %> </li>
-    <li class="list-group-item"> Dew Point: <%= @currentDewPoint %> </li>
-    <li class="list-group-item"> Humidity: <%= @currentHumidity %> </li>
-
-    <li class="list-group-item"> Nearest Storm Bearing: <%= @currentNearestStormBearing %> </li>
-    <li class="list-group-item"> Nearest Storm Distance: <%= @currentNearestStormDistance %> </li>
-    <li class="list-group-item"> Ozone: <%= @currentOzone %> </li>
-    <li class="list-group-item"> Precipitation Intensity: <%= @currentPrecipIntensity %> </li>
-    <li class="list-group-item"> Precipitation Probability: <%= @currentPrecipProbability %> </li>
-    <li class="list-group-item"> Pressure: <%= @currentPressure %> </li>
-    <li class="list-group-item"> Time: <%= @currentTime %> </li>
-    <li class="list-group-item"> Visibility: <%= @currentVisibility %> </li>
-    <li class="list-group-item"> Wind Bearing: <%= @currentWindBearing %> </li>
-    <li class="list-group-item"> Wind Speed: <%= @currentWindSpeed %> </li>
-    <li class="list-group-item"> Weather Icon: <%= @currentSkycon %> </li>
+    <li class="list-group-item"><i class="fa fa-sun-o"></i> &nbsp; Feels like <%= @currentApparentTemp %> </li>
+    <li class="list-group-item"><i class="fa fa-umbrella"></i> &nbsp; Currently <%= @currentPrecipProbability %>% chance of rain </li>
+    <li class="list-group-item"><i class="fa fa-tint"></i> &nbsp; Humidity is at <%= @currentHumidity %>% right now </li>
   </ul>
 
-  <div class="card-block">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
+  <%= render "welcome/collapse" %>
 
-</div>
+
+
+</div>        
+

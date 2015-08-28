@@ -5,6 +5,10 @@ require 'forecast_io'
 
   end
 
+  def convert_time(time)
+  	time = Time.at(time).to_date.strftime("%A")
+  end
+
   def setgeo
 
   	lat_lng = cookies[:lat_lng]
@@ -26,7 +30,7 @@ require 'forecast_io'
 	 	@currentApparentTemp			= currentForecast.apparentTemperature.round.to_s + "°"
 	 	@currentCloudCover				= currentForecast.cloudCover
 	 	@currentDewPoint				= currentForecast.dewPoint
-	 	@currentHumidity				= currentForecast.humidity
+	 	@currentHumidity				= (currentForecast.humidity * 100).to_i
 	 	@currentNearestStormBearing		= currentForecast.nearestStormBearing
 	 	@currentNearestStormDistance	= currentForecast.nearestStormDistance
 	 	@currentOzone					= currentForecast.ozone
@@ -64,45 +68,64 @@ require 'forecast_io'
 		end
 
 
-	  #Daily Weather Data
+#Daily/Today Weather Data
 
-	  @dailyForecastJSON 	= forecast.daily
-	  dailyForecast 	 	= forecast.daily
-	  @dailyHiTemp = dailyForecast.data[0].temperatureMax.round
-	  @dailyLoTemp = dailyForecast.data[0].temperatureMin.round
-	  # @dailyHiTemp = dailyForecast
-	  @dailySummary = dailyForecast.summary
-	  @todaySummary = dailyForecast.data[0].summary
-	  @dailyApparentHiTemp = dailyForecast.data[0].apparentTemperatureMax.round
-	  @dailyApparentLoTemp = dailyForecast.data[0].apparentTemperatureMin.round
-	 	dailyIcon					= dailyForecast.data[0].icon.upcase
-		if dailyIcon 	  == "PARTLY-CLOUDY-DAY"
-			@dailySkycon = "PARTLY_CLOUDY_DAY"		
-		elsif dailyIcon == "PARTLY-CLOUDY-NIGHT"
-			@dailySkycon = "PARTLY_CLOUDY_NIGHT"
-		elsif dailyIcon == "CLEAR-DAY"
-			@dailySkycon = "CLEAR_DAY"
-		elsif dailyIcon == "CLEAR-NIGHT"
-			@dailySkycon = "CLEAR_NIGHT"
-		elsif dailyIcon == "CLOUDY"
-			@dailySkycon = dailyIcon
-		elsif dailyIcon == "RAIN"
-			@dailySkycon = dailyIcon
-		elsif dailyIcon == "SLEET"
-			@cdailySkycon = dailyIcon
-		elsif dailyIcon == "SNOW"
-			@dailySkycon = dailySkycon
-		elsif dailyIcon == "WIND"
-			@dailySkycon = dailySkycon
-		elsif dailyIcon == "FOG"
-			@dailySkycon = dailySkycon			 			 			 			 			 			
+	@dailyForecastJSON 	= forecast.daily
+	dailyForecast 	 	= forecast.daily
+
+   index = 0
+    @dailySummary = [],  @dailyLoTemp =  [], @dailyHiTemp = [], @dailySummary = [], 
+    @dailyApparentLoTemp = [], @dailyApparentHiTemp = [], @dailyPrecipProb = [],
+    dailyIcon = [], @dailySkycon = [], @dailyTime = []
+      #5 times to include today and next 4 days
+      8.times do
+        @dailySummary[index] 		= dailyForecast.data[index].summary
+        @dailyLoTemp[index] 		= dailyForecast.data[index].temperatureMin.round
+        @dailyHiTemp[index] 		= dailyForecast.data[index].temperatureMax.round
+        @dailyApparentLoTemp[index] = dailyForecast.data[index].apparentTemperatureMin.round
+        @dailyApparentHiTemp[index] = dailyForecast.data[index].apparentTemperatureMax.round
+        @dailyPrecipProb[index]		= (dailyForecast.data[index].precipProbability * 100).to_i
+        @dailyTime[index]			= convert_time(dailyForecast.data[index].time)
+        
+
+        #Reformat forecast.io icon strings to be readable by skycons (upcase and underscores instead of dash)
+        dailyIcon[index]		= dailyForecast.data[index].icon.upcase
+		if dailyIcon[index]    == "PARTLY-CLOUDY-DAY"
+			@dailySkycon[index] = "PARTLY_CLOUDY_DAY"		
+		elsif dailyIcon[index] == "PARTLY-CLOUDY-NIGHT"
+			@dailySkycon[index] = "PARTLY_CLOUDY_NIGHT"
+		elsif dailyIcon[index] == "CLEAR-DAY"
+			@dailySkycon[index] = "CLEAR_DAY"
+		elsif dailyIcon[index] == "CLEAR-NIGHT"
+			@dailySkycon[index] = "CLEAR_NIGHT"
+		elsif dailyIcon[index] == "CLOUDY"
+			@dailySkycon[index] = dailyIcon[index]
+		elsif dailyIcon[index] == "RAIN"
+			@dailySkycon[index] = dailyIcon[index]
+		elsif dailyIcon[index] == "SLEET"
+			@cdailySkycon[index] = dailyIcon[index]
+		elsif dailyIcon[index] == "SNOW"
+			@dailySkycon[index] = dailyIcon[index]
+		elsif dailyIcon[index] == "WIND"
+			@dailySkycon[index] = dailyIcon[index]
+		elsif dailyIcon[index] == "FOG"
+			@dailySkycon[index] = dailyIcon[index]			 			 			 			 			 			
 		end
 
 
+        index = index + 1
+      end
 
+
+	  # @dailyHiTemp = dailyForecast
+	  @weekSummary = dailyForecast.summary
+
+	 
   	
 
 
 	end  
+
+
 
 end

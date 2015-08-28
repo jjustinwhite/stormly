@@ -1,0 +1,31 @@
+<ul class="list-group list-group-flush">
+  <div id="accordion" role="tablist" aria-multiselectable="true">
+
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <li class="list-group-item panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <i class="fa fa-plus-square-o"></i> &nbsp;More Info
+          </a>
+        </li>
+      </div>
+
+      <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> Cloud Cover: <%= @currentCloudCover %> </li>
+          <li class="list-group-item"> Dew Point: <%= @currentDewPoint %> </li>
+          <li class="list-group-item"> Nearest Storm Bearing: <%= @currentNearestStormBearing %> </li>
+          <li class="list-group-item"> Nearest Storm Distance: <%= @currentNearestStormDistance %> </li>
+          <li class="list-group-item"> Ozone: <%= @currentOzone %> </li>
+          <li class="list-group-item"> Precipitation Intensity: <%= @currentPrecipIntensity %> </li>
+          <li class="list-group-item"> Pressure: <%= @currentPressure %> </li>
+          <li class="list-group-item"> Visibility: <%= @currentVisibility %> </li>
+          <li class="list-group-item"> Wind Bearing: <%= @currentWindBearing %> </li>
+          <li class="list-group-item"> Wind Speed: <%= @currentWindSpeed %> </li>
+          <li class="list-group-item"> Weather Icon: <%= @currentSkycon %> </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</ul>
