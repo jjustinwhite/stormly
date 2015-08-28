@@ -13,9 +13,9 @@ require 'forecast_io'
 
   	ForecastIO.api_key = '489e6541e3f4c8d407a3152e17f8e8d3'  	
 
-		latitude   = myLocation[0]
-	  	longitude  = myLocation[1]
-		forecast   = ForecastIO.forecast(latitude, longitude) 
+		@latitude   = myLocation[0]
+	  	@longitude  = myLocation[1]
+		forecast   = ForecastIO.forecast(@latitude, @longitude) 
 	  	@timezone  = forecast.timezone
 
 	 

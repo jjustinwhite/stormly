@@ -17,4 +17,9 @@
 body {
 
 	padding-top: 2em;
+	background-color: #446AAA
+}
+
+.large {
+	font-size: 7em;
 }

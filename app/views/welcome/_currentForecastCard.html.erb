@@ -1,9 +1,9 @@
-<div class="card">
+<div class="card card-inverse" style="background-color: #446AAA; border-color: #446AAA;">
 
   <div class="card-block text-center">
     <h4 class="card-title"><%= @timezone %><br /> <small> currently <%= @currentSummary %></small></h4>  <!-- TO-DO change me from timezone to city -->
     <ul class="list-group list-inline">
-      <li><h6 class="card-subtitle text-muted large"> <%= @currentTemp %> </h6></li>
+      <li><h6 class="card-subtitle large"> <%= @currentTemp %> </h6></li>
       <li><canvas id="icon1" class="card-img-top"  width="128" height="128"></canvas></li>
     </ul>
   </div>
