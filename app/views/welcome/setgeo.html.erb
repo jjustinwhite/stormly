@@ -1,4 +1,4 @@
-<div id="map-container"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=650x650&sensor=false&zoom=13&center=#{@latitude}%2C#{@longitude}&visual_refresh=true&scale=2&key=AIzaSyCAaruC-8uY0mbl_eXQRT0Co4ou_EKr9cI", :id =>"map", :class => "img-responsive col-sm-12" %></div> 
+<div id="map-container"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=650x650&sensor=false&zoom=13&center=#{@latitude}%2C#{@longitude}&visual_refresh=true&scale=2&key=AIzaSyCAaruC-8uY0mbl_eXQRT0Co4ou_EKr9cI", :id =>"map", :class => "" %></div> 
 <!-- END Google Maps Background-->
 
 
@@ -40,6 +40,7 @@
   var skycons = new Skycons({"color": "AliceBlue"});
 
   skycons.add("icon1", Skycons.<%= @currentSkycon %>);
+  skycons.add("icon2", Skycons.<%= @dailySkycon %>);
  
   skycons.play();
 

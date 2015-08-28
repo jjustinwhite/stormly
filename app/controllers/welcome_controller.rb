@@ -65,8 +65,39 @@ require 'forecast_io'
 
 
 	  #Daily Weather Data
+
 	  @dailyForecastJSON 	= forecast.daily
 	  dailyForecast 	 	= forecast.daily
+	  @dailyHiTemp = dailyForecast.data[0].temperatureMax.round
+	  @dailyLoTemp = dailyForecast.data[0].temperatureMin.round
+	  # @dailyHiTemp = dailyForecast
+	  @dailySummary = dailyForecast.summary
+	  @todaySummary = dailyForecast.data[0].summary
+	  @dailyApparentHiTemp = dailyForecast.data[0].apparentTemperatureMax.round
+	  @dailyApparentLoTemp = dailyForecast.data[0].apparentTemperatureMin.round
+	 	dailyIcon					= dailyForecast.data[0].icon.upcase
+		if dailyIcon 	  == "PARTLY-CLOUDY-DAY"
+			@dailySkycon = "PARTLY_CLOUDY_DAY"		
+		elsif dailyIcon == "PARTLY-CLOUDY-NIGHT"
+			@dailySkycon = "PARTLY_CLOUDY_NIGHT"
+		elsif dailyIcon == "CLEAR-DAY"
+			@dailySkycon = "CLEAR_DAY"
+		elsif dailyIcon == "CLEAR-NIGHT"
+			@dailySkycon = "CLEAR_NIGHT"
+		elsif dailyIcon == "CLOUDY"
+			@dailySkycon = dailyIcon
+		elsif dailyIcon == "RAIN"
+			@dailySkycon = dailyIcon
+		elsif dailyIcon == "SLEET"
+			@cdailySkycon = dailyIcon
+		elsif dailyIcon == "SNOW"
+			@dailySkycon = dailySkycon
+		elsif dailyIcon == "WIND"
+			@dailySkycon = dailySkycon
+		elsif dailyIcon == "FOG"
+			@dailySkycon = dailySkycon			 			 			 			 			 			
+		end
+
 
 
   	
