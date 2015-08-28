@@ -17,7 +17,12 @@
 body {
 
 	padding-top: 2em;
-	background-color: #95AFD6
+	background-color: #95AFD6;
+
+	background-image: url("http://i.imgur.com/7V43KBy.png");
+
+
+
 }
 
 .large {
