@@ -6,24 +6,26 @@
 
 
 <div class="row">
-  <h1 class="text-center">Acquiring Current Location...</h1>
-  <p class="text-center"><i class="fa fa-spinner fa-spin fa-5x"></i></p>
+	<div class="jumbotron jumbotron-fluid text-center">
+		<div class="container">
+		<canvas id="<%="icon1"%>" class="card-img-top"  width="128" height="128"></canvas>
+		<h1 class="display-3">Welcome to Storm.ly</h1>
+  		<a href="/welcome/setgeo" class="btn btn-lg btn-primary">Find Me!</a>
+  		</div>
+  	</div>
 </div>
-
-<script type="text/javascript">
-    setTimeout(function (){
-     window.location.href="/welcome/setgeo" 
-  }, 1000); 
-</script>
-
-
 
 
 
 <%= javascript_tag do %>
-  var skycons = new Skycons({"color": "Azure  "});
+  var skycons = new Skycons({
+   "monochrome": false,
+   "colors" : {
+     "cloud" : "aliceBlue",
+   }
+   });
 
-  skycons.add("icon1", Skycons.<%= @currentSkycon %>);
+  skycons.add("icon1", Skycons.RAIN);
  
   skycons.play();
 

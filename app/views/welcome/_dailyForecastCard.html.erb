@@ -1,29 +1,30 @@
-<div class="card text-center" style="background-color: #446AAA; border-color: #446AAA;">
-  <div class="card-header">
-    <div class="card-block">
-      <h4 class="card-title">    
-        <% if @dailyTime[@count][0..2] == Time.now.asctime[0..2] %>
-          Today
-        <% else %>
-          <%= @dailyTime[@count] %>
-        <% end %>
-      </h4>
-      <h6 class="card-subtitle text-muted"><%= @dailySummary[@count] %></h6>
+
+
+  <div class="card text-center" style="background-color: #446AAA; border-color: #446AAA;">
+    <div class="card-header">
+      <div class="card-block">
+        <h4 class="card-title">    
+          <% if @dailyTime[@count][0..2] == Time.now.asctime[0..2] %>
+            Today
+          <% else %>
+            <%= @dailyTime[@count] %>
+          <% end %>
+        </h4>
+        <h6 class="card-subtitle text-muted"><%= @dailySummary[@count] %></h6>
+      </div>
+    </div>
+    <div class="card-block card-inverse">
+      <p><canvas id="<%="icon#{@skyconCount}"%>" class="card-img-top"  width="128" height="128"></canvas></p>
+
+      <h4 class="card-title"><%= @dailyHiTemp[@count] %>° &nbsp; <small id="loTemp"><%= @dailyLoTemp[@count] %>°</small></h4>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> feels like a high of <%= @dailyApparentHiTemp[@count] %>°  <br> with a low of <%= @dailyApparentLoTemp[@count] %>°</li>
+    </ul>
+    <div class="card-footer text-muted">
+        <i class="fa fa-umbrella"></i> &nbsp; <%= @dailyPrecipProb[@count] %>% Chance of Rain
     </div>
   </div>
-  <div class="card-block card-inverse">
-    <p><canvas id="<%="icon#{@skyconCount}"%>" class="card-img-top"  width="128" height="128"></canvas></p>
 
-    <h4 class="card-title"><%= @dailyHiTemp[@count] %> &nbsp; <small id="loTemp"><%= @dailyLoTemp[@count] %></small></h4>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"> feels like a high of <%= @dailyApparentHiTemp[@count] %><br> with a low of <%= @dailyApparentLoTemp[@count] %></li>
-  </ul>
-  <div class="card-footer text-muted">
-      <i class="fa fa-umbrella"></i> &nbsp; <%= @dailyPrecipProb[@count] %>% Chance of Rain
-  </div>
-</div>
-
-<br />
 
 

@@ -1,40 +1,58 @@
 
-
-<div class="row">
-
-
 <%- unless @lat_lng %>
   <script>
     getGeoLocation();
   </script>
 <%- end %>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
+
+
+<div class="row hidden-xs">
+
+
+
+    <div class="col-md-6 col-lg-4" id="currently">
+        <h1 class="text-center" style="color: White">Right Now</h1>
+        <%= render "welcome/currentForecastCard" %>
+    </div>
+
+
+    <div class="col-md-6 col-lg-8"  id="weekly">
+        <h1 class="text-center" style="color: White">This Week</h1>
+
+
+            <% @count = 0 %>
+            <% @skyconCount = 2 %> 
+            <% 6.times do %>
+              <div class="col-lg-6">
+                <%= render "welcome/dailyForecastCard" %>
+              </div>
+              <% @count = @count + 1 %>
+              <% @skyconCount = @skyconCount + 1 %>
+            <% end %>
+
+    </div>
+
+
+
 </div>
 
-<div class="row">
 
-  <div class="col-sm-6">
-    <%= render "welcome/currentForecastCard" %>
-  </div>
-
-  <div class="col-sm-6">
-    <% @count = 0 %>
-    <% @skyconCount = 2 %>
-    <% 7.times do %>
-      <%= render "welcome/dailyForecastCard" %>
-      <% @count = @count + 1 %>
-      <% @skyconCount = @skyconCount + 1 %>
-    <% end %>
-  </div>
-
-
-
-</div>
 
 
 
 <%= javascript_tag do %>
-  var skycons = new Skycons({"color": "AliceBlue"});
+    var skycons = new Skycons({
+   "monochrome": false,
+   "colors" : {
+     "cloud" : "aliceBlue"
+   }
+   });
 
   skycons.add("icon1", Skycons.<%= @currentSkycon %>);
 

@@ -28,21 +28,21 @@ require 'forecast_io'
 	 	currentForecast 				= forecast.currently # gives you the current forecast datapoint
 
 	 	@currentApparentTemp			= currentForecast.apparentTemperature.round.to_s + "°"
-	 	@currentCloudCover				= currentForecast.cloudCover
-	 	@currentDewPoint				= currentForecast.dewPoint
+	 	@currentCloudCover				= (currentForecast.cloudCover * 100).to_i
+	 	@currentDewPoint				= currentForecast.dewPoint.to_i
 	 	@currentHumidity				= (currentForecast.humidity * 100).to_i
 	 	@currentNearestStormBearing		= currentForecast.nearestStormBearing
-	 	@currentNearestStormDistance	= currentForecast.nearestStormDistance
+	 	@currentNearestStormDistance	= currentForecast.nearestStormDistance.to_i
 	 	@currentOzone					= currentForecast.ozone
-	 	@currentPrecipIntensity			= currentForecast.precipIntensity
-	 	@currentPrecipProbability		= currentForecast.precipProbability
-	 	@currentPressure				= currentForecast.pressure
+	 	@currentPrecipIntensity			= currentForecast.precipIntensity.round(2)
+	 	@currentPrecipProbability		= (currentForecast.precipProbability * 100).to_i
+	 	@currentPressure				= currentForecast.pressure.to_i
 		@currentSummary  				= currentForecast.summary.downcase 
 		@currentTemp 	 				= currentForecast.temperature.round.to_s + "°"
 	  	@currentTime 					= currentForecast.time
 	  	@currentVisibility				= currentForecast.visibility
 	  	@currentWindBearing				= currentForecast.windBearing
-	  	@currentWindSpeed 				= currentForecast.windSpeed
+	  	@currentWindSpeed 				= currentForecast.windSpeed.to_i
 	  	#Reformat forecast.io icon strings to be readable by skycons (upcase and underscores instead of dash)
 	 	currentIcon					= currentForecast.icon.upcase
 		if currentIcon 	  == "PARTLY-CLOUDY-DAY"

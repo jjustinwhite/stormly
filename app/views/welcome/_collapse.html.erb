@@ -12,16 +12,16 @@
 
       <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"> Cloud Cover: <%= @currentCloudCover %> </li>
-          <li class="list-group-item"> Dew Point: <%= @currentDewPoint %> </li>
+          <li class="list-group-item"> Cloud Cover: <%= @currentCloudCover %>% </li>
+          <li class="list-group-item"> Dew Point: <%= @currentDewPoint %>°F </li>
           <li class="list-group-item"> Nearest Storm Bearing: <%= @currentNearestStormBearing %> </li>
-          <li class="list-group-item"> Nearest Storm Distance: <%= @currentNearestStormDistance %> </li>
-          <li class="list-group-item"> Ozone: <%= @currentOzone %> </li>
-          <li class="list-group-item"> Precipitation Intensity: <%= @currentPrecipIntensity %> </li>
-          <li class="list-group-item"> Pressure: <%= @currentPressure %> </li>
-          <li class="list-group-item"> Visibility: <%= @currentVisibility %> </li>
+          <li class="list-group-item"> Nearest Storm Distance: <%= @currentNearestStormDistance %> mi </li>
+          <li class="list-group-item"> Ozone: <%= @currentOzone %> DU</li>
+          <li class="list-group-item"> Pressure: <%= @currentPressure %> mb </li>
+          <li class="list-group-item"> Rain Intensity: <%= @currentPrecipIntensity %> in./hr. </li>
+          <li class="list-group-item"> Visibility: <%= @currentVisibility %> mi </li>
           <li class="list-group-item"> Wind Bearing: <%= @currentWindBearing %> </li>
-          <li class="list-group-item"> Wind Speed: <%= @currentWindSpeed %> </li>
+          <li class="list-group-item"> Wind Speed: <%= @currentWindSpeed %> mph </li>
           <li class="list-group-item"> Weather Icon: <%= @currentSkycon %> </li>
         </ul>
       </div>
