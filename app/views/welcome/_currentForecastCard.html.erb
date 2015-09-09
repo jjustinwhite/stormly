@@ -5,15 +5,12 @@
       <li><h6 class="card-subtitle large"> <%= @currentTemp %> </h6></li>
       <li><canvas id="icon1" class="card-img-top"  width="128" height="128"></canvas></li>
     </ul>
-    <p class="card-text">
-      Coming Up... <%= @weekSummary %>
-    </p>
   </div>
 
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><i class="fa fa-sun-o"></i> &nbsp; Feels like <%= @currentApparentTemp %> </li>
-    <li class="list-group-item"><i class="fa fa-umbrella"></i> &nbsp; Currently a <%= @currentPrecipProbability %>% chance of rain </li>
-    <li class="list-group-item"><i class="fa fa-tint"></i> &nbsp; Humidity is at <%= @currentHumidity %>% right now </li>
+    <li class="list-group-item"><i class="fa fa-umbrella"></i> &nbsp; <%= @currentPrecipProbability %>% chance precipitation</li>
+    <li class="list-group-item"><i class="fa fa-tint"></i> &nbsp; Humidity is at <%= @currentHumidity %>%</li>
   </ul>
 
   <%= render "welcome/collapse" %>
