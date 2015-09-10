@@ -9,7 +9,9 @@
 
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><i class="fa fa-sun-o"></i> &nbsp; Feels like <%= @currentApparentTemp %> </li>
-    <li class="list-group-item"><i class="fa fa-umbrella"></i> &nbsp; <%= @currentPrecipProbability %>% chance precipitation</li>
+    <% if @currentPrecipProbability > 0 %>
+      <li class="list-group-item"><i class="fa fa-umbrella"></i> &nbsp; <%= @currentPrecipProbability %>% chance precipitation</li>
+    <% end %>
     <li class="list-group-item"><i class="fa fa-tint"></i> &nbsp; Humidity is at <%= @currentHumidity %>%</li>
   </ul>
 
