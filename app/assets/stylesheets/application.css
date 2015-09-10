@@ -37,8 +37,8 @@ body, html {
 }
 #weekly {
   background-color: #4FC1E9;
-  height: 70em;
-  overflow: scroll;
+  /*height: 70em;
+  overflow: scroll;*/
   padding-right: 30px;
   padding-top: 15px;
   padding-bottom: 35px;
