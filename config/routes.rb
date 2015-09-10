@@ -11,9 +11,12 @@ Rails.application.routes.draw do
 
   resources :welcome do
     collection do
-      get 'setgeo'
+      get 'currentlocation'
     end
   end
+
+  get 'currentlocation' => 'welcome#currentlocation'
+
 
 
   # get 'welcome/setgeo'

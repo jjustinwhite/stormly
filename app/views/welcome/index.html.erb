@@ -11,9 +11,9 @@
 		  <canvas id="<%="icon1"%>" class="card-img-top"  width="128" height="128"></canvas>
 		  <h1 class="display-1">Welcome to Storm.ly</h1> <br />
       <% if @locationCookie %>
-        <a href="/welcome/setgeo" class="btn btn-lg btn-success col-sm-4 col-sm-offset-4">Find Me!</a>
+        <a href="/currentlocation" class="btn btn-lg btn-success col-sm-4 col-sm-offset-4">Find Me!</a>
       <% else %>
-        <a href="/welcome/setgeo" class="btn btn-lg btn-primary col-sm-4 col-sm-offset-4">Find Me!</a>
+        <a href="/currentlocation" class="btn btn-lg btn-primary col-sm-4 col-sm-offset-4">Find Me!</a>
       <% end %>
   	</div>
   </div>

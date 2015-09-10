@@ -11,7 +11,7 @@ require 'forecast_io'
   	time = Time.at(time).to_date.strftime("%A")
   end
 
-	def setgeo
+	def currentlocation
 
 		if cookies[:lat_lng]
 			 lat_lng = cookies[:lat_lng]
