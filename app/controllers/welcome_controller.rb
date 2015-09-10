@@ -2,17 +2,20 @@ class WelcomeController < ApplicationController
 require 'forecast_io'
 
   def index
-
+	if cookies[:lat_lng]
+		@locationCookie = cookies[:lat_lng].to_s.split('|')
+	end
   end
 
   def convert_time(time)
   	time = Time.at(time).to_date.strftime("%A")
   end
 
-  def setgeo
+	def setgeo
 
-  	lat_lng = cookies[:lat_lng]
-  	# lat_lng = LocalStorage[:lat_lng]
+		if cookies[:lat_lng]
+			 lat_lng = cookies[:lat_lng]
+
   	myLocation = lat_lng.to_s.split('|')
 
   	ForecastIO.api_key = '489e6541e3f4c8d407a3152e17f8e8d3'  	
@@ -117,11 +120,19 @@ require 'forecast_io'
       end
 
 
+
+
+
 	  # @dailyHiTemp = dailyForecast
 	  @weekSummary = dailyForecast.summary
 
 	 
-  	
+		else
+			#do nothing, no cookie/location data
+
+		end
+
+
 
 
 	end  

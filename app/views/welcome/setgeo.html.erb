@@ -5,69 +5,75 @@
   </script>
 <%- end %>
 
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip(); 
-});
-</script>
-
-
-<div class="row hidden-xs">
+<% if cookies[:lat_lng] %>
+    <div class="row">
 
 
 
-    <div class="col-md-6 col-lg-4" id="currently">
-        <h1 class="text-center" style="color: White">Right Now</h1>
-        <%= render "welcome/currentForecastCard" %>
-    </div>
+      <div class="col-md-6 col-lg-4" id="currently">
+          <h1 class="text-center" style="color: White">Right Now</h1>
+          <%= render "welcome/currentForecastCard" %>
+      </div>
 
 
-    <div class="col-md-6 col-lg-8"  id="weekly">
-        <h1 class="text-center" style="color: White">This Week</h1>
-        <p class="text-center"> <%= @weekSummary %></p>
+      <div class="col-md-6 col-lg-8"  id="weekly">
+          <h1 class="text-center" style="color: White">This Week</h1>
+          <p class="text-center"> <%= @weekSummary %></p>
 
+     
    
- 
 
 
-            <% @count = 0 %>
-            <% @skyconCount = 2 %> 
-            <% 6.times do %>
-              <div class="col-lg-6">
-                <%= render "welcome/dailyForecastCard" %>
-              </div>
-              <% @count = @count + 1 %>
-              <% @skyconCount = @skyconCount + 1 %>
-            <% end %>
+              <% @count = 0 %>
+              <% @skyconCount = 2 %> 
+              <% 6.times do %>
+                <div class="col-lg-6">
+                  <%= render "welcome/dailyForecastCard" %>
+                </div>
+                <% @count = @count + 1 %>
+                <% @skyconCount = @skyconCount + 1 %>
+              <% end %>
 
-    </div>
+      </div>
 
 
 
+  </div>
+
+
+
+
+
+  <%= javascript_tag do %>
+      var skycons = new Skycons({
+     "monochrome": false,
+     "colors" : {
+       "cloud" : "aliceBlue"
+     }
+     });
+
+    skycons.add("icon1", Skycons.<%= @currentSkycon %>);
+
+    skycons.add("icon2", Skycons.<%= @dailySkycon[0] %>);
+    skycons.add("icon3", Skycons.<%= @dailySkycon[1] %>);
+    skycons.add("icon4", Skycons.<%= @dailySkycon[2] %>);
+    skycons.add("icon5", Skycons.<%= @dailySkycon[3] %>);
+    skycons.add("icon6", Skycons.<%= @dailySkycon[4] %>);
+    skycons.add("icon7", Skycons.<%= @dailySkycon[5] %>);
+    skycons.add("icon8", Skycons.<%= @dailySkycon[6] %>);
+   
+    skycons.play();
+
+  <% end %>
+
+<% else %>
+  <script>
+    getGeoLocation();
+  </script>
+<div id="locationAlert">
+  <div class="alert alert-danger" role="alert">
+    <strong>Oh snap!</strong> Looks like something went wrong while trying to set your current location. Please try again below! <br /><small>It may take a few seconds for the browser to find your current location depending on network connection.</small>
+  </div>
+  <a href="/welcome/setgeo" class="btn btn-lg btn-primary col-sm-4 col-sm-offset-4 col-xs-12">Find Me!</a>
 </div>
-
-
-
-
-
-<%= javascript_tag do %>
-    var skycons = new Skycons({
-   "monochrome": false,
-   "colors" : {
-     "cloud" : "aliceBlue"
-   }
-   });
-
-  skycons.add("icon1", Skycons.<%= @currentSkycon %>);
-
-  skycons.add("icon2", Skycons.<%= @dailySkycon[0] %>);
-  skycons.add("icon3", Skycons.<%= @dailySkycon[1] %>);
-  skycons.add("icon4", Skycons.<%= @dailySkycon[2] %>);
-  skycons.add("icon5", Skycons.<%= @dailySkycon[3] %>);
-  skycons.add("icon6", Skycons.<%= @dailySkycon[4] %>);
-  skycons.add("icon7", Skycons.<%= @dailySkycon[5] %>);
-  skycons.add("icon8", Skycons.<%= @dailySkycon[6] %>);
- 
-  skycons.play();
-
 <% end %>
