@@ -1,4 +1,9 @@
-<% unless @lat_lng %>
+<% if cookies[:lat_lng] %>
+  <script>
+    deleteCookie();
+    getGeoLocation();
+  </script>
+<% else %>
   <script>
     getGeoLocation();
   </script>

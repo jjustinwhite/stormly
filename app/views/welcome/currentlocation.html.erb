@@ -1,9 +1,13 @@
-
-<%- unless @lat_lng %>
+<% if cookies[:lat_lng] %>
+  <script>
+    deleteCookie();
+    getGeoLocation();
+  </script>
+<% else %>
   <script>
     getGeoLocation();
   </script>
-<%- end %>
+<% end %>
 
 <% if cookies[:lat_lng] %>
     <div class="row">

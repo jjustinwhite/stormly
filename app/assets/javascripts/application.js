@@ -21,6 +21,9 @@ function getGeoLocation() {
 
 function setGeoCookie(position) {
   var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
-  document.cookie = "lat_lng=" + escape(cookie_val);
-  
+  document.cookie = "lat_lng=" + escape(cookie_val) + ';Path=/;';
+}
+
+function deleteCookie() {
+	document.cookie = 'lat_lng=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
