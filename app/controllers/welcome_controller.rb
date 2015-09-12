@@ -4,6 +4,13 @@ require 'forecast_io'
   def index
 	if cookies[:lat_lng]
 		@locationCookie = cookies[:lat_lng].to_s.split('|')
+		mylat = @locationCookie[0]
+		mylon = @locationCookie[1]
+		result = Geocoder.search(mylat+","+mylon)
+		@myCity = result[0].data["address_components"][2]["long_name"]
+		@myState = result[0].data["address_components"][5]["short_name"]
+		@myAddress = result[0].data["formatted_address"]
+		
 	end
   end
 
@@ -24,6 +31,10 @@ require 'forecast_io'
 	  	@longitude  = myLocation[1]
 		forecast   = ForecastIO.forecast(@latitude, @longitude) 
 	  	@timezone  = forecast.timezone
+	  	result = Geocoder.search(@latitude+","+@longitude)
+		@myCity = result[0].data["address_components"][2]["long_name"]
+		@myState = result[0].data["address_components"][5]["short_name"]
+		@myAddress = result[0].data["formatted_address"]
 
 	 
 

@@ -1,10 +1,6 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-
-
 #map-container {
     width: 100%;
     height: 100%;
@@ -18,10 +14,6 @@ h1,h2,h3,h4,h5,h6 {
 	color: Azure  ;
 }
 
-.fa-spinner {
-	color: Azure;
-}
-
 h4.card-title {
 	color: Black;
 }
@@ -31,5 +23,25 @@ h4.card-title {
 }
 
 #locationAlert {
-    padding-top: 15px;
+}
+
+#dailyCard {
+    background-color: #446AAA;
+    border-color: #446AAA;
+}
+
+#currently {
+  background: #4FC1E9;
+}
+
+#weekly {
+  background: #FC6E51;
+}
+
+#currently, #weekly {
+  padding-top: 15px;
+}
+
+.card {
+   height: auto;
 }

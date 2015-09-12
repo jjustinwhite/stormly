@@ -10,39 +10,35 @@
 <% end %>
 
 <% if cookies[:lat_lng] %>
-    <div class="row">
 
 
-
-      <div class="col-md-6 col-lg-4" id="currently">
+        <div class="col-sm-4" id="weekly">
           <h1 class="text-center" style="color: White">Right Now</h1>
           <%= render "welcome/currentForecastCard" %>
-      </div>
-
-
-      <div class="col-md-6 col-lg-8"  id="weekly">
-          <h1 class="text-center" style="color: White">This Week</h1>
-          <p class="text-center"> <%= @weekSummary %></p>
-
-     
-   
-
-
-              <% @count = 0 %>
-              <% @skyconCount = 2 %> 
-              <% 6.times do %>
-                <div class="col-lg-6">
-                  <%= render "welcome/dailyForecastCard" %>
-                </div>
-                <% @count = @count + 1 %>
-                <% @skyconCount = @skyconCount + 1 %>
-              <% end %>
-
-      </div>
+        </div>
+    
 
 
 
-  </div>
+
+        <div class="col-sm-8" id="currently">
+
+            <h1 class="text-center" style="color: White">This Week</h1>
+            <p class="text-center"> <%= @weekSummary %></p>
+                <% @count = 0 %>
+                <% @skyconCount = 2 %> 
+                
+                <% 6.times do %>
+                  <div class="col-md-6 col-lg-4">
+                    <%= render "welcome/dailyForecastCard" %>
+                  <% @count = @count + 1 %>
+                  <% @skyconCount = @skyconCount + 1 %>
+                  </div>
+                <% end %>
+
+            <br />
+
+        </div>
 
 
 

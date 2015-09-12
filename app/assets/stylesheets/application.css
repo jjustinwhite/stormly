@@ -16,9 +16,6 @@
 
 
 body, html {
-	margin: 0;
-
-	height:100%;
     background-color: #FC6E51;
 }
 
@@ -30,23 +27,10 @@ body, html {
 	color: white;
 }
 
-#currently {
-  background-color: #FC6E51;
-  padding-left: 30px;
-  padding-top: 15px;
-}
-#weekly {
-  background-color: #4FC1E9;
-  /*height: 70em;
-  overflow: scroll;*/
-  padding-right: 30px;
-  padding-top: 15px;
-  padding-bottom: 35px;
-}
+
 
 .jumbotron {
   background-color: #4FC1E9;
 }
-
 
 
