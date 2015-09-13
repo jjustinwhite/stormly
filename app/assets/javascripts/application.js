@@ -40,11 +40,11 @@ function setGeoCookie(position) {
                 dataType:'json',
                 success: function (data) { 
                 	//get city and state
-                       var city = data["results"][0]["address_components"][2]["long_name"];
-                       var state = data["results"][0]["address_components"][5]["short_name"];
+                       
+                       var formattedAddress = data["results"][0]["formatted_address"];
                     //set location arrow icon, city / state as button text, enable button
                        document.getElementById("spinnerIcon").className = "fa fa-location-arrow";      
-                       document.getElementById("btnText").innerHTML = "&nbsp; " + city + ", " + state;
+                       document.getElementById("btnText").innerHTML = "&nbsp; " +  formattedAddress;
   					   document.getElementById("locationBtn").disabled = false;
                 }
             });

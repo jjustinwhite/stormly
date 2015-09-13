@@ -7,10 +7,13 @@ require 'forecast_io'
 		mylat = @locationCookie[0]
 		mylon = @locationCookie[1]
 		result = Geocoder.search(mylat+","+mylon)
+
+
 		@myCity = result[0].data["address_components"][2]["long_name"]
 		@myState = result[0].data["address_components"][5]["short_name"]
 		@myAddress = result[0].data["formatted_address"]
 		
+
 	end
   end
 
@@ -32,8 +35,20 @@ require 'forecast_io'
 		forecast   = ForecastIO.forecast(@latitude, @longitude) 
 	  	@timezone  = forecast.timezone
 	  	result = Geocoder.search(@latitude+","+@longitude)
-		@myCity = result[0].data["address_components"][2]["long_name"]
+
+
+	  	cityType = result[0].data["address_components"][2]["types"][0]
+
+	  	if cityType == "neighborhood" 
+	  		@myCity = result[0].data["address_components"][3]["long_name"]
+	  	else 
+	  		@myCity = result[0].data["address_components"][2]["short_name"]
+	  	end
+
+
 		@myState = result[0].data["address_components"][5]["short_name"]
+
+
 		@myAddress = result[0].data["formatted_address"]
 
 	 
