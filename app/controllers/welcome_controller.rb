@@ -15,6 +15,12 @@ require 'forecast_io'
 		
 
 	end
+	
+	skyconArrayLtd = ["PARTLY_CLOUDY_DAY", "PARTLY_CLOUDY_NIGHT", "CLEAR_DAY", "CLOUDY",
+	  					"RAIN", "SLEET", "SNOW"]
+
+	@randomSkyconLtd = skyconArrayLtd[rand(0..6)]
+
   end
 
   def convert_time(time)
