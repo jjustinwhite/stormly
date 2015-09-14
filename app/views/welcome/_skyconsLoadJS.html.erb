@@ -1,0 +1,31 @@
+<!-- set skycons using js + erb-->
+<%= javascript_tag do %>
+   var skycons = new Skycons({
+   "monochrome": false,
+   "colors" : {
+     "cloud" : "aliceBlue",
+     "fog"   : "#E5E5E5"
+   }
+   });
+
+  skycons.add("icon1", Skycons.<%= @currentSkycon %>);
+
+  <% hourlyIconCount = 2 %>
+  <% hourlyArrayCount = 0 %>
+  <% 25.times do %>
+  	skycons.add("<%= "icon" + hourlyIconCount.to_s %>",  Skycons.<%= @hourlySkycon[hourlyArrayCount] %>);
+  	<% hourlyIconCount = hourlyIconCount + 1 %>
+  	<% hourlyArrayCount = hourlyArrayCount + 1 %>
+  <% end %>
+
+  <% dailyIconCount = 27 %>
+  <% dailyArrayCount = 0 %>
+  <% 8.times do %>
+    skycons.add("<%= "icon" + dailyIconCount.to_s %>", Skycons.<%= @dailySkycon[dailyArrayCount] %>);
+    <% dailyIconCount = dailyIconCount + 1 %>
+    <% dailyArrayCount = dailyArrayCount + 1 %>
+<% end %>
+
+  skycons.play();
+
+<% end %>

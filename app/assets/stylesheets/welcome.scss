@@ -27,6 +27,14 @@ h1,h2,h3,h4,h5,h6 {
      color: white;
  }
 
+#dailyTable td {
+    padding: .1rem;
+}
+
+#hourlyTable td {
+    padding: .5rem;
+}
+
 
 .table-responsive {
    -webkit-overflow-scrolling: touch;

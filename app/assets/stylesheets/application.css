@@ -17,6 +17,16 @@
 
 body, html {
     background-color: #FC6E51;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.thin {
+	font-weight: 100;
+}
+
+.light {
+	font-weight: 300;
 }
 
 .large {
