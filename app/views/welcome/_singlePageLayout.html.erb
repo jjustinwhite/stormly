@@ -1,0 +1,167 @@
+<div class="row blueBG">
+ 	<div class="container">
+		<div class="row">
+			<div class="container text-center">
+				<ul class="list-unstyled">
+					<li><canvas id="icon2"  width="128" height="128"></canvas></li>
+					<li><h3>Chicago</h3></li>
+					<li><h3><small><%= @currentSummary %></small></h3></li>
+					<li><h2 class="large">&nbsp;<%= @currentTemp %></h2></li>
+				</ul>
+				<br />
+
+			 	<h5>
+				    <ul class="list-inline pull-left">
+				    	<li><strong><%= @dailyTime[0]%></strong></li>
+				    	<li><small>Today</small></li>
+				    	
+				    </ul>
+				    <ul class="list-inline pull-right">
+				    	<%= @dailyHiTemp[0] %>° &nbsp; <small id="loTemp"><%= @dailyLoTemp[0] %>°</small> 
+				    </ul>		    
+
+				    <br />
+				    <hr />
+			    </h5>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="container">
+			  <% numHours = 25 %>
+			  <div class="table-responsive" >
+			    <table class="table">
+			      <tbody>
+			        <tr>
+				        <% timeCount = 0 %>
+				        <% numHours.times do %>
+				          <td><%= @hourlyTime[timeCount]%></td>
+				          <% timeCount = timeCount + 1 %>
+				        <% end %>
+			        </tr>
+			        <tr>
+				        <% iconCount = 9 %>
+				        <% numHours.times do %>
+				          <td><canvas id="<%="icon#{iconCount}"%>"  width="32" height="32"></canvas></td>
+
+				        <% iconCount = iconCount + 1 %>
+				        <% end %>
+			        </tr>
+			        <tr>
+				        <% tempCount = 0 %>
+				        <% numHours.times do %>
+				          <td><%= @hourlyTemp[tempCount] %></td>
+				        <% tempCount = tempCount + 1 %>
+				        <% end %>
+			        </tr>
+			      </tbody>
+			    </table>
+			  </div>
+			</div>
+		</div>	
+
+		<div class="row">
+			<div class="container" id="daily">
+			 <hr />
+			  <% numDays = 8 %>
+
+			  <div class="table-responsive">
+			    <table class="table">
+			      <tbody>
+			      <% dayCount = 0 %>
+			      <% iconCount = 34 %>
+			      <% numDays.times do %>
+			        <tr>
+
+				          <td class="pull-left"><%= @dailyTime[dayCount]%></td>
+				          <td><canvas id="<%="icon#{iconCount}"%>"  width="32" height="32"></canvas></td>
+				          <td class="pull-right"><%= @dailyHiTemp[dayCount] %>° &nbsp; <small id="loTemp"><%= @dailyLoTemp[dayCount] %>°</small></td>
+
+			        </tr>
+			        <% dayCount = dayCount + 1 %>
+			        <% iconCount = iconCount + 1 %>
+			      <% end %>
+
+			      </tbody>
+			    </table>
+			  </div>
+
+			</div>
+		    <hr / >
+		</div>	
+
+		<div class="row">
+			<div class="container">
+				<h6 class="text-center">Today: <%= @weekSummary %></h6> <br />
+			</div>
+		</div>	
+
+		<div class="row">
+				
+					<%= render "welcome/collapse" %>
+				
+		</div>
+
+	</div>
+</div>
+
+
+  <!-- set skycons -->
+  <%= javascript_tag do %>
+     var skycons = new Skycons({
+     "monochrome": false,
+     "colors" : {
+       "cloud" : "aliceBlue",
+       "fog"   : "#E5E5E5"
+     }
+     });
+
+    skycons.add("icon1", Skycons.<%= @currentSkycon %>);
+
+    skycons.add("icon2", Skycons.<%= @dailySkycon[0] %>);
+    skycons.add("icon3", Skycons.<%= @dailySkycon[1] %>);
+    skycons.add("icon4", Skycons.<%= @dailySkycon[2] %>);
+    skycons.add("icon5", Skycons.<%= @dailySkycon[3] %>);
+    skycons.add("icon6", Skycons.<%= @dailySkycon[4] %>);
+    skycons.add("icon7", Skycons.<%= @dailySkycon[5] %>);
+    skycons.add("icon8", Skycons.<%= @dailySkycon[6] %>);
+
+    skycons.add("icon9",  Skycons.<%= @hourlySkycon[0] %>);
+    skycons.add("icon10", Skycons.<%= @hourlySkycon[1] %>);
+    skycons.add("icon11", Skycons.<%= @hourlySkycon[2] %>);
+    skycons.add("icon12", Skycons.<%= @hourlySkycon[3] %>);
+    skycons.add("icon13", Skycons.<%= @hourlySkycon[4] %>);
+    skycons.add("icon14", Skycons.<%= @hourlySkycon[5] %>);
+    skycons.add("icon15", Skycons.<%= @hourlySkycon[6] %>);
+    skycons.add("icon16", Skycons.<%= @hourlySkycon[7] %>);
+    skycons.add("icon17", Skycons.<%= @hourlySkycon[8] %>);
+    skycons.add("icon18", Skycons.<%= @hourlySkycon[9] %>);
+    skycons.add("icon19", Skycons.<%= @hourlySkycon[10] %>);
+    skycons.add("icon20", Skycons.<%= @hourlySkycon[11] %>);
+    skycons.add("icon21", Skycons.<%= @hourlySkycon[12] %>);
+    skycons.add("icon22", Skycons.<%= @hourlySkycon[13] %>);
+    skycons.add("icon23", Skycons.<%= @hourlySkycon[14] %>);
+    skycons.add("icon24", Skycons.<%= @hourlySkycon[15] %>);
+    skycons.add("icon25", Skycons.<%= @hourlySkycon[16] %>);
+    skycons.add("icon26", Skycons.<%= @hourlySkycon[17] %>);
+    skycons.add("icon27", Skycons.<%= @hourlySkycon[18] %>);
+    skycons.add("icon28", Skycons.<%= @hourlySkycon[19] %>);
+    skycons.add("icon29", Skycons.<%= @hourlySkycon[20] %>);
+    skycons.add("icon30", Skycons.<%= @hourlySkycon[21] %>);
+    skycons.add("icon31", Skycons.<%= @hourlySkycon[22] %>);
+    skycons.add("icon32", Skycons.<%= @hourlySkycon[23] %>);
+    skycons.add("icon33", Skycons.<%= @hourlySkycon[24] %>);
+
+    skycons.add("icon34", Skycons.<%= @dailySkycon[0] %>);
+    skycons.add("icon35", Skycons.<%= @dailySkycon[1] %>);
+    skycons.add("icon36", Skycons.<%= @dailySkycon[2] %>);
+    skycons.add("icon37", Skycons.<%= @dailySkycon[3] %>);
+    skycons.add("icon38", Skycons.<%= @dailySkycon[4] %>);
+    skycons.add("icon39", Skycons.<%= @dailySkycon[5] %>);
+    skycons.add("icon40", Skycons.<%= @dailySkycon[6] %>);
+    skycons.add("icon41", Skycons.<%= @dailySkycon[7] %>);
+
+   
+    skycons.play();
+
+  <% end %>

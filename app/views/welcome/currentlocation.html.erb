@@ -1,79 +1,26 @@
-<% if cookies[:lat_lng] %>
-  <script>
-    deleteCookie();
-    getGeoLocation();
-  </script>
-<% else %>
-  <script>
-    getGeoLocation();
-  </script>
-<% end %>
+
 
 <% if cookies[:lat_lng] %>
 
 
-        <div class="col-sm-4" id="weekly">
-          <h1 class="text-center" style="color: White">Right Now</h1>
-          <%= render "welcome/currentForecastCard" %>
-        </div>
-    
 
-
-
-
-        <div class="col-sm-8" id="currently">
-
-            <h1 class="text-center" style="color: White">This Week</h1>
-            <p class="text-center"> <%= @weekSummary %></p>
-                <% @count = 0 %>
-                <% @skyconCount = 2 %> 
-                
-                <% 6.times do %>
-                  <div class="col-md-6 col-lg-4">
-                    <%= render "welcome/dailyForecastCard" %>
-                  <% @count = @count + 1 %>
-                  <% @skyconCount = @skyconCount + 1 %>
-                  </div>
-                <% end %>
-
-            <br />
-
-        </div>
-
-
-
-
-
-  <%= javascript_tag do %>
-      var skycons = new Skycons({
-     "monochrome": false,
-     "colors" : {
-       "cloud" : "aliceBlue"
-     }
-     });
-
-    skycons.add("icon1", Skycons.<%= @currentSkycon %>);
-
-    skycons.add("icon2", Skycons.<%= @dailySkycon[0] %>);
-    skycons.add("icon3", Skycons.<%= @dailySkycon[1] %>);
-    skycons.add("icon4", Skycons.<%= @dailySkycon[2] %>);
-    skycons.add("icon5", Skycons.<%= @dailySkycon[3] %>);
-    skycons.add("icon6", Skycons.<%= @dailySkycon[4] %>);
-    skycons.add("icon7", Skycons.<%= @dailySkycon[5] %>);
-    skycons.add("icon8", Skycons.<%= @dailySkycon[6] %>);
-   
-    skycons.play();
-
-  <% end %>
-
-<% else %>
-  <script>
-    getGeoLocation();
-  </script>
-<div id="locationAlert">
-  <div class="alert alert-danger" role="alert">
-    <strong>Oh snap!</strong> Looks like something went wrong while trying to set your current location. Please try again below! <br /><small>It may take a few seconds for the browser to find your current location depending on network connection.</small>
+  <div class="col-sm-12">
+    <%= render "welcome/singlePageLayout" %>
   </div>
-  <a href="/currentlocation" class="btn btn-lg btn-primary col-sm-4 col-sm-offset-4 col-xs-12">Find Me!</a>
-</div>
+
+
+
+
+
+<% else %>
+  <!-- if pageload fails, get/set location, and display error -->
+    <script>
+      getGeoLocation();
+    </script>
+  <div id="locationAlert">
+    <div class="alert alert-danger" role="alert">
+      <strong>Oh snap!</strong> Looks like something went wrong while trying to set your current location. Please try again below! <br /><small>It may take a few seconds for the browser to find your current location depending on network connection.</small>
+    </div>
+    <a href="/currentlocation" class="btn btn-lg btn-primary col-sm-4 col-sm-offset-4 col-xs-12">Find Me!</a>
+  </div>
 <% end %>

@@ -1,0 +1,16 @@
+<!-- Temp storage of code for the dailyForecast inside index.html.erb -->
+
+            <h1 class="text-center" style="color: White">This Week</h1>
+            <p class="text-center"> <%= @weekSummary %></p>
+                <% @count = 0 %>
+                <% @skyconCount = 2 %> 
+                
+                <% 6.times do %>
+                  <div class="col-md-6 col-lg-4">
+                    <%= render "welcome/dailyForecastCard" %>
+                  <% @count = @count + 1 %>
+                  <% @skyconCount = @skyconCount + 1 %>
+                  </div>
+                <% end %>
+
+            <br />

@@ -20,17 +20,16 @@ body, html {
 }
 
 .large {
-	font-size: 7em;
-}
-
-.card-text, .card-title{
-	color: white;
+	font-size: 5em;
 }
 
 
-
-.jumbotron {
+.blueBG {
   background-color: #4FC1E9;
+}
+
+.redBG {
+  background: #FC6E51;
 }
 
 

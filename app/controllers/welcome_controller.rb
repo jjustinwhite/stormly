@@ -75,6 +75,7 @@ require 'forecast_io'
 		@currentSummary  				= currentForecast.summary.downcase 
 		@currentTemp 	 				= currentForecast.temperature.round.to_s + "°"
 	  	@currentTime 					= currentForecast.time
+	  	@currentHour					= Time.at(currentForecast.time).hour
 	  	@currentVisibility				= currentForecast.visibility
 	  	@currentWindBearing				= currentForecast.windBearing
 	  	@currentWindSpeed 				= currentForecast.windSpeed.to_i
@@ -150,6 +151,55 @@ require 'forecast_io'
 
         index = index + 1
       end
+
+#Hourly Weather Data
+
+	@hourlyForecastJSON 	= forecast.hourly
+	hourlyForecast 	 	= forecast.hourly
+
+   index = 0
+      @hourlyTime = [], hourlyIcon = [], @hourlySkycon = [], @hourlyTemp = []
+
+      25.times do
+        @hourlyTime[index]			= Time.at(hourlyForecast.data[index].time).strftime("%l%P").upcase
+
+        @hourlyTemp[index]			= hourlyForecast.data[index].temperature.to_i.to_s + "°"
+
+
+        #Reformat forecast.io icon strings to be readable by skycons (upcase and underscores instead of dash)
+        hourlyIcon[index]		= hourlyForecast.data[index].icon.upcase
+		if hourlyIcon[index]    == "PARTLY-CLOUDY-DAY"
+			@hourlySkycon[index] = "PARTLY_CLOUDY_DAY"		
+		elsif hourlyIcon[index] == "PARTLY-CLOUDY-NIGHT"
+			@hourlySkycon[index] = "PARTLY_CLOUDY_NIGHT"
+		elsif hourlyIcon[index] == "CLEAR-DAY"
+			@hourlySkycon[index] = "CLEAR_DAY"
+		elsif hourlyIcon[index] == "CLEAR-NIGHT"
+			@hourlySkycon[index] = "CLEAR_NIGHT"
+		elsif hourlyIcon[index] == "CLOUDY"
+			@hourlySkycon[index] = hourlyIcon[index]
+		elsif hourlyIcon[index] == "RAIN"
+			@hourlySkycon[index] = hourlyIcon[index]
+		elsif hourlyIcon[index] == "SLEET"
+			@chourlySkycon[index] = hourlyIcon[index]
+		elsif hourlyIcon[index] == "SNOW"
+			@hourlySkycon[index] = hourlyIcon[index]
+		elsif hourlyIcon[index] == "WIND"
+			@hourlySkycon[index] = hourlyIcon[index]
+		elsif hourlyIcon[index] == "FOG"
+			@hourlySkycon[index] = hourlyIcon[index]			 			 			 			 			 			
+		end
+
+       
+        index = index + 1
+      end
+
+
+
+
+
+
+
 
 
 
