@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="container text-center">
 				<ul class="list-unstyled">
-					<li><canvas id="icon1"  width="128" height="128"></canvas></li>
+					<li><canvas id="icon1"  width="96" height="96"></canvas></li>
 					<li><h3><%= @myCity %></h3></li>
 					<li><h3><small><%= @currentSummary %></small></h3></li>
 					<li><h2 class="large">&nbsp;<%= @currentTemp %></h2></li>
@@ -36,7 +36,7 @@
 			        	<% if timeCount == 0 %>
 			        		<td><strong>Now</strong></td>
 			        	<% else %>
-			        		<td><%= @hourlyTime[timeCount]%></td>
+			        		<td><%= local_time(@hourlyTime[timeCount], "%l%P") %></td>
 			        	<% end %>
 			        	<% timeCount = timeCount + 1 %>
 			        <% end %>

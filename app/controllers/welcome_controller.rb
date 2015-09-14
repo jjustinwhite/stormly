@@ -154,7 +154,7 @@ require 'forecast_io'
 		  @hourlyTime = [], hourlyIcon = [], @hourlySkycon = [], @hourlyTemp = []
 
 		  25.times do
-		    @hourlyTime[index]			= Time.at(hourlyForecast.data[index].time).strftime("%l%P").upcase
+		    @hourlyTime[index]			= Time.at(hourlyForecast.data[index].time)
 
 		    @hourlyTemp[index]			= hourlyForecast.data[index].temperature.to_i.to_s + "°"
 
