@@ -27,42 +27,44 @@
 		</div>
 
 		<div class="row">
-			<div class="container">
-			  <% numHours = 25 %>
-			  <div class="table-responsive" >
-			    <table class="table">
-			      <tbody>
-			        <tr>
-				        <% timeCount = 0 %>
-				        <% numHours.times do %>
-				          <td><%= @hourlyTime[timeCount]%></td>
-				          <% timeCount = timeCount + 1 %>
-				        <% end %>
-			        </tr>
-			        <tr>
-				        <% iconCount = 9 %>
-				        <% numHours.times do %>
-				          <td><canvas id="<%="icon#{iconCount}"%>"  width="32" height="32"></canvas></td>
+		  <% numHours = 25 %>
+		  <div class="table-responsive" >
+		    <table class="table">
+		      <tbody>
+		        <tr>
+			        <% timeCount = 0 %>
+			        <% numHours.times do %>
+			        	<% if timeCount == 0 %>
+			        		<td><strong>Now</strong></td>
+			        	<% else %>
+			        		<td><%= @hourlyTime[timeCount]%></td>
+			        	<% end %>
+			        	<% timeCount = timeCount + 1 %>
+			        <% end %>
+		        </tr>
+		        <tr>
+			        <% iconCount = 9 %>
+			        <% numHours.times do %>
+			          <td><canvas id="<%="icon#{iconCount}"%>"  width="32" height="32"></canvas></td>
 
-				        <% iconCount = iconCount + 1 %>
-				        <% end %>
-			        </tr>
-			        <tr>
-				        <% tempCount = 0 %>
-				        <% numHours.times do %>
-				          <td><%= @hourlyTemp[tempCount] %></td>
-				        <% tempCount = tempCount + 1 %>
-				        <% end %>
-			        </tr>
-			      </tbody>
-			    </table>
-			  </div>
-			</div>
+			        <% iconCount = iconCount + 1 %>
+			        <% end %>
+		        </tr>
+		        <tr>
+			        <% tempCount = 0 %>
+			        <% numHours.times do %>
+			          <td><%= @hourlyTemp[tempCount] %></td>
+			        <% tempCount = tempCount + 1 %>
+			        <% end %>
+		        </tr>
+		      </tbody>
+		    </table>
+		    <hr />
+		  </div>
 		</div>	
 
 		<div class="row">
 			<div class="container" id="daily">
-			 <hr />
 			  <% numDays = 8 %>
 
 			  <div class="table-responsive">
@@ -97,12 +99,11 @@
 		</div>	
 
 		<div class="row">
-				
-					<%= render "welcome/collapse" %>
-				
+			<%= render "welcome/collapse" %>
+			<br />
 		</div>
-
 	</div>
+
 </div>
 
 

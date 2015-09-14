@@ -37,3 +37,11 @@ body, html {
 	 white-space: normal; 
 
 }
+
+.padTop {
+	padding-top: 15px;
+}
+
+.padBot {
+	padding-bottom: 15px;
+}
