@@ -24,7 +24,37 @@
       <h6 class="text-center">Hello! We're still in development right now, but feel free to poke around!</h6> <br />
   </div>
 
+  <div class="col-sm-12">
+    <ul class="list-inline">
 
+    </ul>
+  </div>
+
+  <div class="table-responsive" >
+    <table class="table" id="hourlyTable">
+      <tbody class="text-center">
+        <tr>
+
+              <td><strong>Now</strong></td>
+              <td><strong><%=  @newyork %></td><strong>
+              <td><strong><%=  @losangeles %></td><strong>
+              <td><strong><%=  @chicago %></td><strong>
+              <td><strong><%=  @houston %></td><strong>
+              <td><strong><%=  @philadelphia %></td><strong>
+              <td><strong><%=  @phoenix %></td><strong>
+              <td><strong><%=  @sanantonio %></td><strong>
+              <td><strong><%=  @sandiego %></td><strong>
+              <td><strong><%=  @dallas %></td><strong>
+              <td><strong><%=  @sanjose %></td><strong>
+              <td><strong><%=  @austin %></td><strong>
+              <td><strong><%=  @jacksonville %></td><strong>
+              <td><strong><%=  @sanfrancisco %></td><strong>
+              <td><strong><%=  @indianapolis %></td><strong>
+              <td><strong><%=  @columbus %></td><strong>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 <%= javascript_tag do %>
   var skycons = new Skycons({

@@ -20,6 +20,23 @@ require 'forecast_io'
 	  					"RAIN", "SLEET"]
 
 	@randomSkyconLtd = skyconArrayLtd[rand(0..3)]
+ForecastIO.api_key = '489e6541e3f4c8d407a3152e17f8e8d3'  
+    @newyork = "New York"  + ForecastIO.forecast(40.7127, -74.0059).currently.temperature.to_i.to_s + "°"
+    @losangeles = "Los Angeles: " + ForecastIO.forecast(34.0500, -118.2500).currently.temperature.to_i.to_s + "°"
+    @chicago = "Chicago: " + ForecastIO.forecast(41.8369, -87.6847).currently.temperature.to_i.to_s + "°"
+    @houston = "Houston: " + ForecastIO.forecast(29.7604, -95.3698).currently.temperature.to_i.to_s + "°"
+    @philadelphia = "Philadelphia: " + ForecastIO.forecast(39.9500, -75.1667).currently.temperature.to_i.to_s + "°"
+    @phoenix = "Phoenix: " + ForecastIO.forecast(33.4500, -112.0667).currently.temperature.to_i.to_s + "°"
+    @sanantonio = "San Antonio: " + ForecastIO.forecast(29.4167, -98.5000).currently.temperature.to_i.to_s + "°"
+    @sandiego = "San Diego: " + ForecastIO.forecast(32.7150, -117.1625).currently.temperature.to_i.to_s + "°"
+    @dallas = "Dallas: " + ForecastIO.forecast(32.7767, -96.7970).currently.temperature.to_i.to_s + "°"
+    @sanjose = "San Jose: " + ForecastIO.forecast(37.3382, -121.8863).currently.temperature.to_i.to_s + "°"
+    @austin = "Austin: " + ForecastIO.forecast(30.2500, -97.7500).currently.temperature.to_i.to_s + "°"
+    @jacksonville = "Jacksonville: " + ForecastIO.forecast(30.3369, -81.6614).currently.temperature.to_i.to_s + "°"
+    @sanfrancisco = "San Francisco: " + ForecastIO.forecast(37.7833, -122.4167).currently.temperature.to_i.to_s + "°"
+    @indianapolis = "Indianapolis: " + ForecastIO.forecast(39.7910, -86.1480).currently.temperature.to_i.to_s + "°"
+    @columbus = "Columbus: " + ForecastIO.forecast(39.9833, -82.9833).currently.temperature.to_i.to_s + "°"
+
 	
   end
 

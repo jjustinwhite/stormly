@@ -35,24 +35,23 @@ function setGeoCookie(position) {
   var jsonURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlng["lat"] + "," + latlng["lng"] + "&key=AIzaSyAqB4yFSNATtAmaE9xmlDZt9-adJx5Fz6c";
   	//read JSON data
   $.ajax({ 
-                type: 'GET', 
-                url: jsonURL, 
-                data: { get_param: 'value' }, 
-                dataType:'json',
-                success: function (data) { 
-                	//get city and state
-                       
-                       var formattedAddress = data["results"][0]["formatted_address"];
-                    //set location arrow icon, city / state as button text, enable button
-                       document.getElementById("spinnerIcon").className = "fa fa-location-arrow";      
-                       document.getElementById("btnText").innerHTML = "&nbsp; " +  formattedAddress;
-  					           document.getElementById("locationBtn").disabled = false;
-                }
-            });
+              type: 'GET', 
+              url: jsonURL, 
+              data: { get_param: 'value' }, 
+              dataType:'json',
+              success: function (data) { 
+              	//get city and state
+                     
+                     var formattedAddress = data["results"][0]["formatted_address"];
+                  //set location arrow icon, city / state as button text, enable button
+                     document.getElementById("spinnerIcon").className = "fa fa-location-arrow";      
+                     document.getElementById("btnText").innerHTML = "&nbsp; " +  formattedAddress;
+  				           document.getElementById("locationBtn").disabled = false;
+              }
+          });
 
 }
 
 function deleteCookie() {
 	document.cookie = 'lat_lng=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
-
