@@ -1,14 +1,15 @@
-<div class="row blueBG">
- 	<div class="container padTop">
+<div class="row padTop">
+ 	<div class="container">
 
 
  		<%= render "welcome/currently" %>
  		<%= render "welcome/hourly" %>
  		<%= render "welcome/daily" %>
 
-		<div class="row">
+		<div class="row blueBG-2">
+		<br />
 			<div class="container">
-				<h6 class="text-center">Today: <%= @weekSummary %></h6> <br />
+				<h6 class="text-center">This week... <%= @weekSummary %></h6> <br />
 			</div>
 		</div>	
 

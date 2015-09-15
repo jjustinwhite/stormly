@@ -21,21 +21,42 @@ body, html {
     font-weight: 400;
 }
 
-.thin {
-	font-weight: 100;
-}
 
-.light {
-	font-weight: 300;
-}
+/* font style */
+  .thin {
+  	font-weight: 100;
+  }
 
-.large {
-   font-size: 4rem;
+  .light {
+  	font-weight: 300;
+  }
+
+  .large {
+     font-size: 5.5rem;
+  }
+  
+a:hover{
+    text-decoration: none;
 }
 
 
 .blueBG {
-  background-color: #4FC1E9;
+  background-color: #4fc1e9;
+}
+.blueBG-2 {
+  background-color: #1aa2d1;
+}
+.blueBG-3 {
+  background-color: #22b1e3;
+}
+.blueBG-4 {
+  background-color: #38b9e6;
+}
+.blueBG-5 {
+  background-color: #4fc1e9;
+}
+.blueBG-6 {
+  background-color: #66c9ec;
 }
 
 .redBG {

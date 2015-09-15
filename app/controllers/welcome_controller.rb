@@ -16,10 +16,10 @@ require 'forecast_io'
 
 	end
 	
-	skyconArrayLtd = ["PARTLY_CLOUDY_DAY", "PARTLY_CLOUDY_NIGHT", "CLEAR_DAY", "CLOUDY",
-	  					"RAIN", "SLEET", "SNOW"]
+	skyconArrayLtd = ["PARTLY_CLOUDY_DAY", "CLEAR_DAY",
+	  					"RAIN", "SLEET"]
 
-	@randomSkyconLtd = skyconArrayLtd[rand(0..6)]
+	@randomSkyconLtd = skyconArrayLtd[rand(0..3)]
 
   end
 

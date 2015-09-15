@@ -46,7 +46,7 @@ function setGeoCookie(position) {
                     //set location arrow icon, city / state as button text, enable button
                        document.getElementById("spinnerIcon").className = "fa fa-location-arrow";      
                        document.getElementById("btnText").innerHTML = "&nbsp; " +  formattedAddress;
-  					   document.getElementById("locationBtn").disabled = false;
+  					           document.getElementById("locationBtn").disabled = false;
                 }
             });
 

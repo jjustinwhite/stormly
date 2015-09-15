@@ -1,7 +1,10 @@
 <% if cookies[:lat_lng] %> <!-- if cookie exists, load the weather -->
 
-  <div class="col-sm-12">
+  <div class="col-sm-12 blueBG">
       <%= render "welcome/singlePageLayout" %>
+      <div class="container">
+         <a href="http://www.forecast.io" target="_blank"><p class="text-center">Powered by Forecast</p></a>
+      </div>
   </div>
 
 <% else %>  <!-- if pageload fails, get/set location, and display error -->

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row blueBG-4">
   <div class="table-responsive" >
     <table class="table" id="hourlyTable">
       <tbody class="text-center">
@@ -8,7 +8,7 @@
 	        	<% if timeCount == 0 %>
 	        		<td><strong>Now</strong></td>
 	        	<% else %>
-	        		<td><%= local_time(@hourlyTime[timeCount], "%l%P") %></td>
+	        		<td class="light"><%= local_time(@hourlyTime[timeCount], "%l%P") %></td>
 	        	<% end %>
 	        	<% timeCount = timeCount + 1 %>
 	        <% end %>
@@ -16,7 +16,7 @@
         <tr>
 	        <% iconCount = 2 %>
 	        <% @numHours.times do %>
-	          <td><canvas id="<%="icon#{iconCount}"%>"  width="32" height="32"></canvas></td>
+	          <td><canvas id="<%="icon#{iconCount}"%>"  width="30" height="30"></canvas></td>
 
 	        <% iconCount = iconCount + 1 %>
 	        <% end %>
