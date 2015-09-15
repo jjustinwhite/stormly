@@ -10,7 +10,7 @@
 
 		          <td class="pull-left">
 		          	<% todaysDay = Time.now.strftime("%A") %>
-		          	<% if @dailyTime[dayCount] == todaysDay %>
+		          	<% if dayCount == 0 %>
 		          		<strong>Today</strong>
 		          	<% else %>
 		          		<%= @dailyTime[dayCount]%>

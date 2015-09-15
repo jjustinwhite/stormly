@@ -20,7 +20,7 @@ require 'forecast_io'
 	  					"RAIN", "SLEET"]
 
 	@randomSkyconLtd = skyconArrayLtd[rand(0..3)]
-
+	
   end
 
 
@@ -122,7 +122,8 @@ require 'forecast_io'
 			if dailyIcon[index]    == "PARTLY-CLOUDY-DAY"
 				@dailySkycon[index] = "PARTLY_CLOUDY_DAY"		
 			elsif dailyIcon[index] == "PARTLY-CLOUDY-NIGHT"
-				@dailySkycon[index] = "PARTLY_CLOUDY_NIGHT"
+				@dailySkycon[index] = "CLEAR_DAY" #if partly-cloudy-night is reported, switch to clear_day (shouldn't show night time for daily weather, 
+													#but the API still reports night time cloudyness even on clear days)
 			elsif dailyIcon[index] == "CLEAR-DAY"
 				@dailySkycon[index] = "CLEAR_DAY"
 			elsif dailyIcon[index] == "CLEAR-NIGHT"
@@ -189,7 +190,6 @@ require 'forecast_io'
 
 	else
 		#do nothing, no cookie/location data
-
 	end #end if/else checking for cookies[:lat_lng]
   end  #end currentLocation
 
