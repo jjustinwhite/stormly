@@ -31,11 +31,9 @@
   </div>
 
   <div class="table-responsive" >
-    <table class="table" id="hourlyTable">
+    <table class="table" id="cityTable">
       <tbody class="text-center">
         <tr>
-
-              <td><strong>Now</strong></td>
               <td><strong><%=  @newyork %></td><strong>
               <td><strong><%=  @losangeles %></td><strong>
               <td><strong><%=  @chicago %></td><strong>
@@ -57,16 +55,20 @@
   </div>
 
 <%= javascript_tag do %>
-  var skycons = new Skycons({
+var skycons = new Skycons({
    "monochrome": false,
    "colors" : {
      "cloud" : "aliceBlue",
+     "fog"   : "#E5E5E5",
+     "moon"  : "#e6e9d0"
    }
    });
 
-  skycons.add("icon1", Skycons.<%= @randomSkyconLtd%>);
- 
+  skycons.add("icon1", Skycons.<%= @randomSkyconLtd%>);   
+
   skycons.play();
+
+
 
 <% end %>
 

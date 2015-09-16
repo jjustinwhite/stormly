@@ -37,7 +37,19 @@ h1,h2,h3,h4,h5,h6 {
     padding: .4rem;
 }
 
+#cityTable td {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
 .table-responsive {
    -webkit-overflow-scrolling: touch;   
 }
 .table-responsive::-webkit-scrollbar { width: 0 !important } 
+
+#cityTable {
+    white-space:nowrap;
+}
