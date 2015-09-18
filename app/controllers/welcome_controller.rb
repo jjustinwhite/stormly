@@ -168,15 +168,12 @@ require 'forecast_io'
 	    hourlyForecast 	 	= forecast.hourly
 
 		index = 0
-		  @hourlyTime = [], hourlyIcon = [], @hourlySkycon = [], @hourlyTemp = []
+		  @hourlyTime = [], hourlyIcon = [], @hourlySkycon = [], @hourlyTemp = [], @hourlyPrecip = []
 
 		  25.times do
 		    @hourlyTime[index]			= Time.at(hourlyForecast.data[index].time)
-
 		    @hourlyTemp[index]			= hourlyForecast.data[index].temperature.to_i.to_s + "°"
-
-
-		    #Reformat forecast.io icon strings to be readable by skycons (upcase and underscores instead of dash)
+		    @hourlyPrecip[index]		= ((hourlyForecast.data[index].precipProbability * 100) / 5 ).round * 5 #rounded to nearest multiple of 5 for readability		    #Reformat forecast.io icon strings to be readable by skycons (upcase and underscores instead of dash)
 		    hourlyIcon[index]		= hourlyForecast.data[index].icon.upcase
 			if hourlyIcon[index]    == "PARTLY-CLOUDY-DAY"
 				@hourlySkycon[index] = "PARTLY_CLOUDY_DAY"		

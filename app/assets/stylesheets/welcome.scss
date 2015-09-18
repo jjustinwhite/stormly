@@ -21,35 +21,45 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: 300;
 }
 
-
-
-.table th, .table td { 
-     border-top: none !important; 
-     color: white;
- }
-
-
-#dailyTable td {
-    padding: .1rem;
-}
-
-#hourlyTable td {
-    padding: .4rem;
-}
-
-#cityTable td {
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
-    padding-top: 0;
-    padding-bottom: 0;
+#precip {
+    color: #e0f4fb;
+    font-weight: 300;
 }
 
 
-.table-responsive {
-   -webkit-overflow-scrolling: touch;   
-}
-.table-responsive::-webkit-scrollbar { width: 0 !important } 
+// TABLE STYLING 
+    .table th, .table td { 
+         border-top: none !important; 
+         color: white;
+     }
 
-#cityTable {
-    white-space:nowrap;
-}
+
+    #dailyTable td {
+        padding: .1rem;
+    }
+
+
+    #hourlyTable td {
+        padding: .4rem;
+    }
+
+
+    #cityTable td {
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+
+    .table-responsive {
+       -webkit-overflow-scrolling: touch;  
+    }
+    .table-responsive::-webkit-scrollbar { 
+        width: 0 !important;
+        height: 0 !important;
+    } 
+
+    #cityTable {
+        white-space:nowrap;
+    }

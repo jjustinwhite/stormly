@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require local_time
 //= require_tree .
-
 function getCookie(name) {
   var value = "; " + document.cookie;
   var parts = value.split("; " + name + "=");

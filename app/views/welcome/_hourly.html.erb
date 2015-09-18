@@ -1,6 +1,6 @@
-<div class="row">
+<div class="row blueBG-4">
   <div class="table-responsive" >
-    <table class="table blueBG-4" id="hourlyTable">
+    <table class="table" id="hourlyTable">
       <tbody class="text-center">
         <tr>
 	        <% timeCount = 0 %>
@@ -14,12 +14,27 @@
 	        <% end %>
         </tr>
         <tr>
+	        <% precipCount = 0 %>
+	        <% @numHours.times do %>
+	          <td style="padding: 0rem;">
+	          <% if @hourlyPrecip[precipCount] > 18 %> <!-- tweak this number based on icons -->
+	         	 <span id="precip"><%= @hourlyPrecip[precipCount].to_s + "%"%></span>
+	          <% end %>
+
+	          </td>
+	        <% precipCount = precipCount + 1 %>
+	        <% end %>
+        </tr>
+        <tr>
 	        <% iconCount = 2 %>
 	        <% @numHours.times do %>
 	          <td><canvas id="<%="icon#{iconCount}"%>"  width="30" height="30"></canvas></td>
 
 	        <% iconCount = iconCount + 1 %>
 	        <% end %>
+        </tr>
+        <tr>
+        	<td></td>
         </tr>
         <tr>
 	        <% tempCount = 0 %>
