@@ -17,9 +17,11 @@
 	        <% precipCount = 0 %>
 	        <% @numHours.times do %>
 	          <td style="padding: 0rem;">
-	          <% if @hourlyPrecip[precipCount] > 18 %> <!-- tweak this number based on icons -->
-	         	 <span id="precip"><%= @hourlyPrecip[precipCount].to_s + "%"%></span>
-	          <% end %>
+	          <% if @hourlySkycon[precipCount] == "RAIN" %>
+		          <% if @hourlyPrecip[precipCount] >= 5 %> <!-- hide when under 5% chance -->
+		         	 <span id="precip"><%= @hourlyPrecip[precipCount].to_s + "%"%></span>
+		          <% end %>
+		      <% end %>
 
 	          </td>
 	        <% precipCount = precipCount + 1 %>
@@ -34,7 +36,7 @@
 	        <% end %>
         </tr>
         <tr>
-        	<td></td>
+        	<td><br /></td>
         </tr>
         <tr>
 	        <% tempCount = 0 %>

@@ -46,6 +46,7 @@ function setGeoCookie(position) {
                      document.getElementById("spinnerIcon").className = "fa fa-location-arrow";      
                      document.getElementById("btnText").innerHTML = "&nbsp; " +  formattedAddress;
   				           document.getElementById("locationBtn").disabled = false;
+
               }
           });
 
@@ -54,5 +55,4 @@ function setGeoCookie(position) {
 function deleteCookie() {
 	document.cookie = 'lat_lng=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
-
 

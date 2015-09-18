@@ -22,7 +22,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #precip {
-    color: #e0f4fb;
+    color: #83eff0;
     font-weight: 300;
 }
 
@@ -40,7 +40,11 @@ h1,h2,h3,h4,h5,h6 {
 
 
     #hourlyTable td {
-        padding: .4rem;
+        padding-bottom: .0rem;
+        padding-top: .0rem;
+        padding-left: .4rem;
+        padding-right: .4rem;
+
     }
 
 
