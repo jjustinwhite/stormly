@@ -31,12 +31,19 @@
 	        <% iconCount = 2 %>
 	        <% @numHours.times do %>
 	          <td><canvas id="<%="icon#{iconCount}"%>"  width="30" height="30"></canvas></td>
-
 	        <% iconCount = iconCount + 1 %>
 	        <% end %>
         </tr>
-        <tr>
-        	<td><br /></td>
+        <tr> <!-- add br if there is a chance of rain to evenly space the layout -->
+        	<% precipCount = 0 %>
+	        <% @numHours.times do %>
+	          <% if @hourlySkycon[precipCount] == "RAIN" %>
+	            <td>	
+	          		<br />
+	          	</td>
+		      <% end %>
+	        <% precipCount = precipCount + 1 %>
+	        <% end %>
         </tr>
         <tr>
 	        <% tempCount = 0 %>
