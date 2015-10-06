@@ -2,6 +2,7 @@
   <script>
     deleteCookie();
     getGeoLocation();
+    initMap();
   </script>
 <% else %>
   <script>
@@ -12,7 +13,7 @@
 	<div class="jumbotron jumbotron-fluid text-center blueBG">
 		<div class="container">
 		  <canvas id="<%="icon1"%>" class="card-img-top"  width="128" height="128"></canvas>
-		  <h1 class="display-2 thin">Storm.ly</h1>
+		  <h1 class="display-4 thin">Storm.ly</h1>
       <h5 class="light">simple hyperlocal weather forecasting</h5>  <br />
 
         <button type="button" disabled onClick="location.href='/currentlocation'" id="locationBtn" class="btn btn-lg btn-primary col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
@@ -26,11 +27,11 @@
       <h6 class="text-center hidden-xs">Hello! We're still in development right now, but feel free to poke around!</h6> <br />
   </div>
 
-  <div class="col-sm-12">
-    <ul class="list-inline">
 
-    </ul>
-  </div>
+
+          <div id="map-canvas"></div> <br />
+         
+
 
   <div class="table-responsive" >
     <table class="table" id="cityTable">
@@ -54,6 +55,11 @@
         </tr>
       </tbody>
     </table>
+
+
+
+
+
   </div>
 
   <br />

@@ -31,6 +31,10 @@ body, html {
   	font-weight: 300;
   }
 
+  .medium{
+    font-weight: 400;
+  }
+
   .large {
      font-size: 5.5rem;
   }
@@ -64,8 +68,7 @@ a:hover{
 
 
 #btnText {
-	 white-space: normal; 
-
+      white-space: normal;
 }
 
 .padTop {
@@ -107,3 +110,14 @@ body {
 #mainFooter {
   margin-top: 15px;
 }
+
+/* Map Styles 
+-------------------------------------------------- */
+    #map-canvas {
+      width: 100%;
+      height: 28rem;
+    }
+    .gm-style-iw {
+      text-align: center;
+    }
+
