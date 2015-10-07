@@ -226,13 +226,6 @@ a:hover{
   }
 
 
-
-
-
-
-
-
-
 .redBG {
   background: #FC6E51;
 }
@@ -265,9 +258,7 @@ body {
   margin-bottom: 4rem;
 }
 
-#detailsList {
-  padding-bottom: 4rem;
-}
+
 
 .footer {
   position: absolute;

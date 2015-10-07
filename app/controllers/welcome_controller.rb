@@ -146,7 +146,7 @@ require 'forecast_io'
 	   index = 0
 	    @dailySummary = [],  @dailyLoTemp =  [], @dailyHiTemp = [], @dailySummary = [], 
 	    @dailyApparentLoTemp = [], @dailyApparentHiTemp = [], @dailyPrecipProb = [],
-	    dailyIcon = [], @dailySkycon = [], @dailyTime = []
+	    dailyIcon = [], @dailySkycon = [], @dailyTime = [], dailyMoonPhase = [], @dailyMoonPhaseName = []
 	    	@weekSummary = dailyForecast.summary
 	      8.times do
 	        @dailySummary[index] 		= dailyForecast.data[index].summary
@@ -156,8 +156,37 @@ require 'forecast_io'
 	        @dailyApparentHiTemp[index] = dailyForecast.data[index].apparentTemperatureMax.round
 	        @dailyPrecipProb[index]		= (dailyForecast.data[index].precipProbability * 100).to_i
 	        @dailyTime[index]			= convert_time(dailyForecast.data[index].time)
-	        
+	        dailyMoonPhase[index]		= dailyForecast.data[index].moonPhase*100
 
+	        #Lunar Logic
+	        if dailyMoonPhase[index] >= 0 && dailyMoonPhase[index] <= 3
+	        	@dailyMoonPhaseName[index]  = "New Moon"
+
+	        elsif dailyMoonPhase[index] > 3 && dailyMoonPhase[index] < 25
+	        	@dailyMoonPhaseName[index]  = "Waxing Crescent"	        	
+
+	        elsif dailyMoonPhase[index] >= 25 && dailyMoonPhase[index] <= 28
+	        	@dailyMoonPhaseName[index]  = "First Quarter Moon"
+
+	        elsif dailyMoonPhase[index] > 28 && dailyMoonPhase[index] < 50
+	        	@dailyMoonPhaseName[index]  = "Waxing Gibbous"	   	        	
+
+	        elsif dailyMoonPhase[index] >= 50 && dailyMoonPhase[index] <= 53
+	        	@dailyMoonPhaseName[index]  = "Full Moon"
+
+	        elsif dailyMoonPhase[index] > 53 && dailyMoonPhase[index] < 75
+	        	@dailyMoonPhaseName[index]  = "Waning Gibbous"	   
+
+	        elsif dailyMoonPhase[index] >= 75 && dailyMoonPhase[index] <= 78
+	        	@dailyMoonPhaseName[index]  = "Last Quarter Moon"
+
+	       elsif dailyMoonPhase[index] > 78 && dailyMoonPhase[index] < 100
+	        	@dailyMoonPhaseName[index]  = "Waning Crescent"	   
+
+	        end
+
+
+	        
 	 
 
 	        #Reformat forecast.io icon strings to be readable by skycons (upcase and underscores instead of dash)
