@@ -24,45 +24,16 @@
 
   <div class="col-sm-offset-3 col-sm-6">
       <br />
-      <h6 class="text-center hidden-xs">Hello! We're still in development right now, but feel free to poke around!</h6> <br />
+      <h6 class="text-center hidden-xs medium">Hello! We're still in development right now, but feel free to poke around!</h6> <br />
+  </div>
+
+  <div id="map-canvas"></div>  <br /> <br />
+
+  <div class="container">
+    <%= render "welcome/cityScroll"  %> <br />
   </div>
 
 
-
-          <div id="map-canvas"></div> <br />
-         
-
-
-  <div class="table-responsive" >
-    <table class="table" id="cityTable">
-      <tbody class="text-center">
-        <tr>
-              <td><strong><%=  @newyork %></td><strong>
-              <td><strong><%=  @losangeles %></td><strong>
-              <td><strong><%=  @chicago %></td><strong>
-              <td><strong><%=  @houston %></td><strong>
-              <td><strong><%=  @philadelphia %></td><strong>
-              <td><strong><%=  @phoenix %></td><strong>
-              <td><strong><%=  @sanantonio %></td><strong>
-              <td><strong><%=  @sandiego %></td><strong>
-              <td><strong><%=  @dallas %></td><strong>
-              <td><strong><%=  @sanjose %></td><strong>
-              <td><strong><%=  @austin %></td><strong>
-              <td><strong><%=  @jacksonville %></td><strong>
-              <td><strong><%=  @sanfrancisco %></td><strong>
-              <td><strong><%=  @indianapolis %></td><strong>
-              <td><strong><%=  @columbus %></td><strong>
-        </tr>
-      </tbody>
-    </table>
-
-
-
-
-
-  </div>
-
-  <br />
 
 <%= javascript_tag do %>
 var skycons = new Skycons({
@@ -78,6 +49,7 @@ var skycons = new Skycons({
 
   skycons.play();
 
+$('.ticker').ticker();
 
 
 <% end %>
