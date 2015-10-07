@@ -15,6 +15,9 @@ require 'forecast_io'
 		
 
 	end
+
+
+
 	
 	skyconArrayLtd = ["PARTLY_CLOUDY_DAY", "CLEAR_DAY",
 	  					"RAIN", "SLEET"]
@@ -201,6 +204,14 @@ require 'forecast_io'
 		   
 		    index = index + 1
 		end
+
+	#set background color on condition
+	if @currentSkycon == "PARTLY_CLOUDY_NIGHT" || "CLEAR_NIGHT" 
+		@conditionBG = "midnight"
+	else
+		@conditionBG = "blue"
+	end
+
 
 	else
 		#do nothing, no cookie/location data

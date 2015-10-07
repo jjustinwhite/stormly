@@ -1,10 +1,10 @@
 <div class="row padTop">
- 	<div class="container-fluid blueBG-3 ">
+ 	<div class="container-fluid <%= @conditionBG %>BG-3 ">
  		<%= render "welcome/currently" %>
  		<%= render "welcome/hourly" %>
  		<%= render "welcome/daily" %>
 
-		<div class="row blueBG-2">
+		<div class="row <%= @conditionBG %>BG-2">
 		<br />
 			<div class="container">
 				<h6 class="text-center">This week... <%= @weekSummary %></h6> <br />

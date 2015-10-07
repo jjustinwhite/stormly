@@ -4,7 +4,7 @@
 
 <% if cookies[:lat_lng] %> <!-- if cookie exists, load the weather -->
 
-  <div class="col-sm-12 blueBG">
+  <div class="col-sm-12 <%= @conditionBG %>BG">
       <%= render "welcome/singlePageLayout" %>
   </div>
 
