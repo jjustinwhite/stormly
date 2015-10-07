@@ -3,7 +3,7 @@
 		<ul class="list-unstyled">
 			<li><canvas id="icon1"  width="96" height="96"></canvas></li>
 			<li><h3><%= @myCity %></h3></li>
-			<li><h3><small class="light"><%= @currentSummary %></small></h3></li>
+			<li><h3><small class="light"><%= @minutelySummary %></small></h3></li>
 			<li><h2 class="large thin">&nbsp;<%= @currentTemp %></h2></li>
 		</ul>
 		<br />
@@ -14,6 +14,9 @@
 		    	<li><small class="thin">Today</small></li>
 		    	
 		    </ul>
+
+
+
 		    <ul class="list-inline pull-right">
 		    	<%= @dailyHiTemp[0] %>° &nbsp; <small id="loTemp"><%= @dailyLoTemp[0] %>°</small> 
 		    </ul>		    

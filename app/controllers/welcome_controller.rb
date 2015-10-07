@@ -80,6 +80,7 @@ require 'forecast_io'
 	 	@currentPrecipProbability		= (currentForecast.precipProbability * 100).to_i
 	 	@currentPressure				= currentForecast.pressure.to_i
 		@currentSummary  				= currentForecast.summary.downcase 
+		@minutelySummary				= forecast.minutely.summary.downcase.chomp(".")
 		@currentTemp 	 				= currentForecast.temperature.round.to_s + "°"
 	  	@currentTime 					= currentForecast.time
 	  	@currentHour					= Time.at(currentForecast.time).hour
