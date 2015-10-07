@@ -124,9 +124,8 @@ body {
 
     .ticker {
     width: 300px;
-    padding-left: 50px;
     color: white;
-    text-align: center;
+    padding-left: 50px;
 }
  /* The HTML list gets replaced with a single div,
     which contains the active ticker item, so you
@@ -134,6 +133,6 @@ body {
 .ticker div {
     display: inline-block;
     word-wrap: break-word;
-    text-align: center;
+    padding-left: 100px;
 }
 
