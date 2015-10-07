@@ -160,28 +160,28 @@ require 'forecast_io'
 
 	        #Lunar Logic
 	        if dailyMoonPhase[index] >= 0 && dailyMoonPhase[index] <= 3
-	        	@dailyMoonPhaseName[index]  = "🌑 New Moon"
+	        	@dailyMoonPhaseName[index]  = "🌑 &nbsp;".html_safe + "New Moon"
 
 	        elsif dailyMoonPhase[index] > 3 && dailyMoonPhase[index] < 25
-	        	@dailyMoonPhaseName[index]  = "🌒 Waxing Crescent"	        	
+	        	@dailyMoonPhaseName[index]  = "🌒 &nbsp;".html_safe + "Waxing Crescent"	        	
 
 	        elsif dailyMoonPhase[index] >= 25 && dailyMoonPhase[index] <= 28
-	        	@dailyMoonPhaseName[index]  = "🌓 First Quarter Moon"
+	        	@dailyMoonPhaseName[index]  = "🌓 &nbsp;".html_safe + "First Quarter Moon"
 
 	        elsif dailyMoonPhase[index] > 28 && dailyMoonPhase[index] < 50
-	        	@dailyMoonPhaseName[index]  = "🌔 Waxing Gibbous"	   	        	
+	        	@dailyMoonPhaseName[index]  = "🌔 &nbsp;".html_safe + "Waxing Gibbous"	   	        	
 
 	        elsif dailyMoonPhase[index] >= 50 && dailyMoonPhase[index] <= 53
-	        	@dailyMoonPhaseName[index]  = "🌕 Full Moon"
+	        	@dailyMoonPhaseName[index]  = "🌕 &nbsp;".html_safe + "Full Moon"
 
 	        elsif dailyMoonPhase[index] > 53 && dailyMoonPhase[index] < 75
-	        	@dailyMoonPhaseName[index]  = "🌖 Waning Gibbous"	   
+	        	@dailyMoonPhaseName[index]  = "🌖 &nbsp;".html_safe + "Waning Gibbous"	   
 
 	        elsif dailyMoonPhase[index] >= 75 && dailyMoonPhase[index] <= 78
-	        	@dailyMoonPhaseName[index]  = "🌗 Last Quarter Moon"
+	        	@dailyMoonPhaseName[index]  = "🌗 &nbsp;".html_safe + "Last Quarter Moon"
 
 	       elsif dailyMoonPhase[index] > 78 && dailyMoonPhase[index] < 100
-	        	@dailyMoonPhaseName[index]  = "🌘 Waning Crescent"	   
+	        	@dailyMoonPhaseName[index]  = "🌘 &nbsp;".html_safe + "Waning Crescent"	   
 
 	        end
 
