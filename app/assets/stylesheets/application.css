@@ -44,25 +44,25 @@ a:hover{
     text-decoration: none;
 }
 
-/* blue BG styles
+/* partlyCloudyBG styles
 -------------------------------------------------- */
-  .blueBG-2 {
+  .partlyCloudyBG-2 {
     background-color: #1aa2d1;
   }
-  .blueBG-3 {
+  .partlyCloudyBG-3 {
     background-color: #22b1e3;
   }
-  .blueBG-4 {
+  .partlyCloudyBG-4 {
     background-color: #38b9e6;
   }
-  .blueBG-5, .blueBG  {
+  .partlyCloudyBG-5, .partlyCloudyBG  {
     background-color: #4fc1e9;
   }
-  .blueBG-6 {
+  .partlyCloudyBG-6 {
     background-color: #66c9ec;
   }
 
-/* midnight BG styles
+/* midnightBG styles
 -------------------------------------------------- */
   .midnightBG-2 {
     background-color: #11181f;
@@ -79,6 +79,152 @@ a:hover{
   .midnightBG-6 {
     background-color: #354b60;
   }
+
+/* midnightCloudBG styles
+-------------------------------------------------- */
+  .midnightCloudBG-2 {
+    background-color: #19232d;
+  }
+  .midnightCloudBG-3 {
+    background-color: #22303d;
+  }
+  .midnightCloudBG-4 {
+    background-color: #2b3c4e;
+  }
+  .midnightCloudBG-5, .midnightCloudBG  {
+    background-color: #34495e;
+  }
+  .midnightCloudBG-6 {
+    background-color: #3d566e;
+  }
+
+/* clearskyBG styles
+-------------------------------------------------- */
+  .clearSkyBG-2 {
+    background-color: #1d6fa5;
+  }
+  .clearSkyBG-3 {
+    background-color: #217dbb;
+  }
+  .clearSkyBG-4 {
+    background-color: #258cd1;
+  }
+  .clearSkyBG-5, .clearSkyBG  {
+    background-color: #3498db;
+  }
+  .clearSkyBG-6 {
+    background-color: #4aa3df;
+  }
+
+/* cloudyBG styles
+-------------------------------------------------- */
+  .cloudyBG-2 {
+    background-color: #6d8082;
+  }
+  .cloudyBG-3 {
+    background-color: #798d8f;
+  }
+  .cloudyBG-4 {
+    background-color: #87999a;
+  }
+  .cloudyBG-5, .cloudyBG  {
+    background-color: #95a5a6;
+  }
+  .cloudyBG-6 {
+    background-color: #a3b1b2;
+  }
+
+/* foggyBG styles
+-------------------------------------------------- */
+  .foggyBG-2 {
+    background-color: #949da4;
+  }
+  .foggyBG-3 {
+    background-color: #a1aab0;
+  }
+  .foggyBG-4 {
+    background-color: #afb6bb;
+  }
+  .foggyBG-5, .foggyBG  {
+    background-color: #bdc3c7;
+  }
+  .foggyBG-6 {
+    background-color: #cbd0d3;
+  }
+
+/* snowBG styles
+-------------------------------------------------- */
+  .snowBG-2 {
+    background-color: #c0cdd1;
+  }
+  .snowBG-3 {
+    background-color: #cfd9db;
+  }
+  .snowBG-4 {
+    background-color: #dde4e6;
+  }
+  .snowBG-5, .snowBG  {
+    background-color: #ecf0f1;
+  }
+  .snowBG-6 {
+    background-color: #fbfcfc;
+  }
+
+  /* rainBG styles
+-------------------------------------------------- */
+  .rainBG-2 {
+    background-color: #41545e;
+  }
+  .rainBG-3 {
+    background-color: #4b626d;
+  }
+  .rainBG-4 {
+    background-color: #566f7c;
+  }
+  .rainBG-5, .rainBG  {
+    background-color: #607d8b;
+  }
+  .rainBG-6 {
+    background-color: #6b8a99;
+  }
+
+
+  /* windBG styles
+-------------------------------------------------- */
+  .windBG-2 {
+    background-color: #208e4e;
+  }
+  .windBG-3 {
+    background-color: #25a25a;
+  }
+  .windBG-4 {
+    background-color: #29b765;
+  }
+  .windBG-5, .windBG  {
+    background-color: #2ecc71;
+  }
+  .windBG-6 {
+    background-color: #40d47e;
+  }
+
+  /* sleetBG styles
+-------------------------------------------------- */
+  .sleetBG-2 {
+    background-color: #6b6e75;
+  }
+  .sleetBG-3 {
+    background-color: #787a82;
+  }
+  .sleetBG-4 {
+    background-color: #85878f;
+  }
+  .sleetBG-5, .sleetBG  {
+    background-color: #92949b;
+  }
+  .sleetBG-6 {
+    background-color: #9fa1a7;
+  }
+
 
 
 

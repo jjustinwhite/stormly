@@ -93,26 +93,49 @@ require 'forecast_io'
 	  	#Reformat forecast.io icon strings to be readable by skycons (upcase and underscores instead of dash)
 	 	currentIcon					= currentForecast.icon.upcase
 		if currentIcon 	  == "PARTLY-CLOUDY-DAY"
-			@currentSkycon = "PARTLY_CLOUDY_DAY"		
+			@currentSkycon = "PARTLY_CLOUDY_DAY"
+			@conditionBG   = "partlyCloudy" 
+
 		elsif currentIcon == "PARTLY-CLOUDY-NIGHT"
 			@currentSkycon = "PARTLY_CLOUDY_NIGHT"
+			@conditionBG   = "midnightCloud"
+
 		elsif currentIcon == "CLEAR-DAY"
 			@currentSkycon = "CLEAR_DAY"
+			@conditionBG   = "clearSky"
+
 		elsif currentIcon == "CLEAR-NIGHT"
 			@currentSkycon = "CLEAR_NIGHT"
+			@conditionBG   = "midnight"
+
 		elsif currentIcon == "CLOUDY"
 			@currentSkycon = currentIcon
+			@conditionBG   = "cloudy"
+
 		elsif currentIcon == "RAIN"
 			@currentSkycon = currentIcon
+			@conditionBG   = "rain"
+
 		elsif currentIcon == "SLEET"
 			@currentSkycon = currentIcon
+			@conditionBG   = "sleet" 
+
 		elsif currentIcon == "SNOW"
 			@currentSkycon = currentSkycon
+			@conditionBG   = "snow" #NEEDS NEW TEXT COLOR
+
 		elsif currentIcon == "WIND"
 			@currentSkycon = currentSkycon
+			@conditionBG   = "wind" #NEEDS A BETTER COLOR / ICON COLOR CONFLICT
+
 		elsif currentIcon == "FOG"
-			@currentSkycon = currentSkycon			 			 			 			 			 			
+			@currentSkycon = currentSkycon	
+			@conditionBG   = "foggy"
 		end
+
+
+
+
 
 
 	#Daily Weather Data
@@ -205,14 +228,7 @@ require 'forecast_io'
 		    index = index + 1
 		end
 
-	#set background color on condition
-	if @currentSkycon == "PARTLY_CLOUDY_NIGHT" || "CLEAR_NIGHT" 
-		@conditionBG = "midnight"
-	elsif @currentSkycon == "CLEAR_DAY"
-		@conditionBG = "blue"
-	else
-		@conditionBG = "blue"
-	end
+
 
 
 	else
