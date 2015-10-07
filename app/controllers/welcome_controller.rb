@@ -208,6 +208,8 @@ require 'forecast_io'
 	#set background color on condition
 	if @currentSkycon == "PARTLY_CLOUDY_NIGHT" || "CLEAR_NIGHT" 
 		@conditionBG = "midnight"
+	elsif @currentSkycon == "CLEAR_DAY"
+		@conditionBG = "blue"
 	else
 		@conditionBG = "blue"
 	end
