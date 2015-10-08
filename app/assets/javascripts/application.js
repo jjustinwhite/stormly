@@ -34,7 +34,7 @@ function setGeoCookie(position) {
   	//split lat/lng 
   var latlngStr = getCookie("lat_lng").split('|', 2);
   var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
-  var jsonURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlng["lat"] + "," + latlng["lng"] + "&key=AIzaSyB0OIPv-lxJMdFF2-0mNj-Fz4YMuFENrqI";
+  var jsonURL = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latlng["lat"] + "," + latlng["lng"] + "&key=AIzaSyDII37zYjuYQjFMADQVfJXUdVB6Hyejy5M";
   	//read JSON data
   $.ajax({ 
               type: 'GET', 
