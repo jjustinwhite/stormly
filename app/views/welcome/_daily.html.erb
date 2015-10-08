@@ -3,9 +3,9 @@
 	  <div class="table-responsive">
 	    <table class="table" id="dailyTable">
 	      <tbody>
-	      <% dayCount = 0 %>
-	      <% iconCount = 27 %>
-	      <% @numDays.times do %>
+	      <% dayCount = 1 #set to 0 to add 'today' back %>
+	      <% iconCount = 28 #set to 27 to add 'today' back %> 
+	      <% @numDays.times do #set to 8 in welcomecontroller to add 'today' back %>
 	        <tr>
 
 		          <td class="pull-left">

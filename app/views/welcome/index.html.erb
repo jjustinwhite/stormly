@@ -27,32 +27,43 @@
       <h6 class="text-center hidden-xs medium">Hello! We're still in development right now, but feel free to poke around!</h6> <br />
   </div>
 
-  <div id="map-canvas"></div>  <br /> <br />
-
-  <div class="container">
-    <%= render "welcome/cityScroll"  %> <br />
-  </div>
 
 
+  <!--   <div id="map-canvas"></div>  <br /> <br />
 
-<%= javascript_tag do %>
-var skycons = new Skycons({
-   "monochrome": false,
-   "colors" : {
-     "cloud" : "aliceBlue",
-     "fog"   : "#E5E5E5",
-     "moon"  : "#e6e9d0"
-   }
-   });
-
-  skycons.add("icon1", Skycons.<%= @randomSkyconLtd%>);   
-
-  skycons.play();
-
-$('.ticker').ticker();
+    <div class="container">
+      <%= render "welcome/cityScroll"  %> <br />
+    </div> -->
 
 
-<% end %>
+    <footer class="footer">
+      <div class="container text-center">
+        <p class="text-muted medium" id="mainFooter">
+          Created by <a href="http://www.justinwhite.co" target="_blank">Justin White</a> &nbsp;
+          Powered by <a href="http://www.forecast.io" target="_blank">Forecast</a>
+        </p>
+      </div>
+    </footer>
+
+
+  <%= javascript_tag do %>
+  var skycons = new Skycons({
+     "monochrome": false,
+     "colors" : {
+       "cloud" : "aliceBlue",
+       "fog"   : "#E5E5E5",
+       "moon"  : "#e6e9d0"
+     }
+     });
+
+    skycons.add("icon1", Skycons.<%= @randomSkyconLtd%>);   
+
+    skycons.play();
+
+  $('.ticker').ticker();
+
+
+  <% end %>
 
 
 

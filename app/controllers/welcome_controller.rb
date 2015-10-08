@@ -44,7 +44,7 @@ require 'forecast_io'
 
 
 	def currentlocation
-		@numDays = 8 
+		@numDays = 7 #set to 8 to add 'today' back 
 		@numHours = 25
 
 	  if cookies[:lat_lng]

@@ -12,15 +12,34 @@
 		</div>	
 
 		<div class="row">
-			<%= render "welcome/collapse" %>
-			<br />
+	    <br />
+			 <div class="container">
+			 	<h5 class="text-center light">&nbsp; <%= @dailyMoonPhaseName[0] %> </h5> <br />
+			 </div>
 		</div>
 
-		<div class="row padBot">
-		 <div class="container padBot">
-		 	<h5 class="text-center light">&nbsp; <%= @dailyMoonPhaseName[0] %>  </h5> <br / class="hidden-lg-up hidden-xs-down"><br / class="hidden-lg-up hidden-xs-down">
-		 </div>
+		<div class="row">
+			<%= render "welcome/collapse" %>
+
 		</div>
+
+		<div class="row">
+		    <footer class="footer2">
+		      <div class="container text-center">
+		        <p class="text-muted medium" id="mainFooter">
+		          Created by <a href="http://www.justinwhite.co" target="_blank">Justin White</a> &nbsp;
+		          Powered by <a href="http://www.forecast.io" target="_blank">Forecast</a>
+		        </p>
+		      </div>
+		    </footer>
+		</div>
+
+
+
+
+
+
+
 
 
 	</div>

@@ -1,5 +1,7 @@
 <% if cookies[:lat_lng] %> <!-- if cookie exists, load the weather -->
-
+    <script>
+      getGeoLocation();
+    </script>
   <div class="col-sm-12 <%= @conditionBG %>BG">
       <%= render "welcome/singlePageLayout" %>
   </div>

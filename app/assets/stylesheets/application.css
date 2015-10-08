@@ -269,6 +269,14 @@ body {
   background-color: #f5f5f5;
 }
 
+.footer2 {
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 4rem;
+  background-color: #f5f5f5;
+}
+
 #mainFooter {
   margin-top: 1.25em;
 
