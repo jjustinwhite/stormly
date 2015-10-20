@@ -22,6 +22,13 @@ body, html {
 }
 
 
+.image1, .image2 {
+    width: 100%;
+    position: absolute;
+    padding-top: 60px;
+}
+
+
 /* font style */
   .thin {
   	font-weight: 100;
@@ -266,6 +273,7 @@ html {
 }
 
 .footer2 {
+  position: relative;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */

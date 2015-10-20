@@ -18,13 +18,22 @@
 			 </div>
 		</div>
 
-		<div class="row">
 
-		</div>
 
 		<div class="row">
 			<%= render "welcome/collapse" %>
 
+		</div>
+
+
+
+		<div class="row">
+
+	
+        	<%= image_tag "https://api.mapbox.com/v4/mapbox.dark/#{@longitude},#{@latitude},9/1280x640.png?access_token=pk.eyJ1Ijoic2lyanVzdGlud2hpdGUiLCJhIjoiM2RhYjVhOWNmOWZjMmVhM2RhZTIzYWI3ZmM0OTE4MjYifQ.NIiVmxMtB5abdZksPlhyRg", :class => "center-block img img-responsive image1 ", :alt => "Weather Radar" %>
+
+              <%= image_tag "http://api.wunderground.com/api/481df4c08135e618/animatedradar/image.png?centerlat=#{@latitude}&centerlon=#{@longitude}&radius=40&width=1280&height=640&newmaps=0&timelabel=1&timelabel.y=10&num=5&delay=50", :class => "center-block img img-responsive image2", :alt => "Weather Radar" %>
+ 
 		</div>
 
 		<div class="row">

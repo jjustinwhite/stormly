@@ -17,7 +17,8 @@
           <li class="list-group-item"> Nearest Storm Bearing: <%= @currentNearestStormBearing %> </li>
           <li class="list-group-item"> Nearest Storm Distance: <%= @currentNearestStormDistance %> mi </li>
           <li class="list-group-item"> 
-             <%= image_tag "http://api.wunderground.com/api/481df4c08135e618/animatedradar/image.png?centerlat=#{@latitude}&centerlon=#{@longitude}&radius=200&width=400&height=400&newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=50&smooth=1", :class => "center-block img img-responsive", :alt => "Weather Radar" %>
+          
+
           </li>
           <li class="list-group-item"> Ozone: <%= @currentOzone %> DU</li>
           <li class="list-group-item"> Pressure: <%= @currentPressure %> mb </li>
@@ -33,3 +34,4 @@
 
   </div>
 </ul>
+
