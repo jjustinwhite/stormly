@@ -21,11 +21,17 @@ body, html {
     font-weight: 400;
 }
 
+#mapContainer {
+  position: relative;
+
+}
+
 
 .image1, .image2 {
     width: 100%;
     position: absolute;
     padding-top: 60px;
+    top: 4px;
 }
 
 
@@ -239,7 +245,8 @@ a:hover{
 
 
 #btnText {
-      white-space: normal;
+  white-space: normal;
+
 }
 
 .padTop {

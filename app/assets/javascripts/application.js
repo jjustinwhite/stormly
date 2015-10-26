@@ -42,10 +42,10 @@ function setGeoCookie(position) {
               data: { get_param: 'value' }, 
               dataType:'json',
               success: function (data) { 
-              	//get city and state
+              	//get formatted address
                      
                      var formattedAddress = data["results"][0]["formatted_address"];
-                  //set location arrow icon, city / state as button text, enable button
+                  //set location arrow icon, formatted address as button text, enable button
                      document.getElementById("spinnerIcon").className = "fa fa-location-arrow";      
                      document.getElementById("btnText").innerHTML = "&nbsp; " +  formattedAddress;
   				           document.getElementById("locationBtn").disabled = false;
