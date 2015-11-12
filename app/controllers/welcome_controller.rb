@@ -117,15 +117,15 @@ require 'forecast_io'
 			@conditionBG   = "sleet" 
 
 		elsif currentIcon == "SNOW"
-			@currentSkycon = currentSkycon
+			@currentSkycon = currentIcon
 			@conditionBG   = "snow" #NEEDS NEW TEXT COLOR
 
 		elsif currentIcon == "WIND"
-			@currentSkycon = currentSkycon
+			@currentSkycon = currentIcon
 			@conditionBG   = "wind" #NEEDS A BETTER COLOR / ICON COLOR CONFLICT
 
 		elsif currentIcon == "FOG"
-			@currentSkycon = currentSkycon	
+			@currentSkycon = currentIcon
 			@conditionBG   = "foggy"
 		end
 
