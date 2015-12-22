@@ -593,8 +593,8 @@
         h = ctx.canvas.height,
         s = Math.min(w, h);
 
-    snow(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
-    cloud(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
+    snow(ctx, t, w * 0.5, h * 0.1 , s * 1.0, s * STROKE, color);
+    
   };
 
   Skycons.WIND = function(ctx, t, color) {

@@ -26,6 +26,9 @@ body, html {
 
 }
 
+.text-center {
+  text-align: center;
+}
 
 .image1, .image2 {
     width: 100%;

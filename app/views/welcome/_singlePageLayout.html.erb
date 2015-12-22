@@ -19,26 +19,17 @@
 		</div>
 
 
-
 		<div class="row">
 			<%= render "welcome/collapse" %>
-
 		</div>
 
 
-
 		<div class="row">
+			<div id="mapContainer">
+	        	<%= image_tag "https://api.mapbox.com/v4/mapbox.dark/pin-s-marker+999(#{@longitude},#{@latitude})/#{@longitude},#{@latitude},8/1280x640@2x.png?access_token=pk.eyJ1Ijoic2lyanVzdGlud2hpdGUiLCJhIjoiM2RhYjVhOWNmOWZjMmVhM2RhZTIzYWI3ZmM0OTE4MjYifQ.NIiVmxMtB5abdZksPlhyRg", :class => "center-block img img-responsive image1", :alt => "Weather Radar" %>
 
-
-
-		<div id="mapContainer">
-        	<%= image_tag "https://api.mapbox.com/v4/mapbox.dark/pin-s-marker+999(#{@longitude},#{@latitude})/#{@longitude},#{@latitude},8/1280x640@2x.png?access_token=pk.eyJ1Ijoic2lyanVzdGlud2hpdGUiLCJhIjoiM2RhYjVhOWNmOWZjMmVhM2RhZTIzYWI3ZmM0OTE4MjYifQ.NIiVmxMtB5abdZksPlhyRg", :class => "center-block img img-responsive image1", :alt => "Weather Radar" %>
-
-              <%= image_tag "http://api.wunderground.com/api/481df4c08135e618/animatedradar/image.png?centerlat=#{@latitude}&centerlon=#{@longitude}&radius=78&width=1280&height=640&newmaps=0&timelabel=1&timelabel.y=10&num=5&delay=50&noclutter=1&smooth=1", :class => "center-block img img-responsive image2", :alt => "Weather Radar" %>
-
-
-
- 		</div>
+	              <%= image_tag "http://api.wunderground.com/api/481df4c08135e618/animatedradar/image.png?centerlat=#{@latitude}&centerlon=#{@longitude}&radius=78&width=1280&height=640&newmaps=0&timelabel=1&timelabel.y=10&num=5&delay=50&noclutter=1&smooth=1", :class => "center-block img img-responsive image2", :alt => "Weather Radar" %>
+	 		</div>
 		</div>
 
 		<div class="row">
