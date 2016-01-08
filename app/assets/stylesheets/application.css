@@ -33,8 +33,6 @@ body, html {
 .image1, .image2 {
     width: 100%;
     position: absolute;
-    padding-top: 60px;
-    top: 4px;
 }
 
 
@@ -294,6 +292,10 @@ html {
 #mainFooter {
   margin-top: 1.25em;
 
+}
+
+#collapse {
+  padding-bottom: 60px;
 }
 
 /* Map Styles 
