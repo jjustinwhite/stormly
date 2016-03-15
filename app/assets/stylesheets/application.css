@@ -15,6 +15,7 @@
  */
 
 
+/* universal */
 body, html {
     background-color: #FC6E51;
     font-family: 'Roboto', sans-serif;
@@ -39,6 +40,17 @@ body, html {
   opacity: 0.75;
 }
 
+ .hidden {
+  visibility: hidden;
+ }
+
+.hourly_chance {
+  line-height: 1.1 !important;
+  padding-bottom: 1px !important;
+  color: #7fdbfd !important ;
+  font-weight: 300 !important;
+  font-size: 15px !important;
+}
 
 /* font style */
   .thin {
