@@ -35,6 +35,10 @@ body, html {
     position: absolute;
 }
 
+.image2 {
+  opacity: 0.75;
+}
+
 
 /* font style */
   .thin {
