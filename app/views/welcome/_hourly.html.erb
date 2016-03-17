@@ -17,7 +17,7 @@
 	        <% precipCount = 0 %>
 	        <% @numHours.times do %>
 	          <td class="hourly_chance">
-	          <% if @hourlySkycon[precipCount] %>
+	          <% if @hourlySkycon[precipCount] == "RAIN" %>
 		          <% if @hourlyPrecip[precipCount] >= 5 %> <!-- hide when under 5% chance -->
 		         	 <%= @hourlyPrecip[precipCount].to_s + "%"%>
 		          <% end %>
@@ -37,9 +37,9 @@
         <tr> <!-- add space if there is a chance of rain to evenly space the layout -->
         	<% precipCount = 0 %>
 	        <% @numHours.times do %>
-	          <% if @hourlySkycon[precipCount] %>
+	          <% if @hourlySkycon[precipCount] == "RAIN" %>
 	            <td class="hourly_chance">	
-	            	<span class="hidden">✨</span>
+	            	<<span class="hidden">✨</span>
 	          	</td>
 		      <% end %>
 	        <% precipCount = precipCount + 1 %>
