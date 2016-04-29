@@ -1,8 +1,13 @@
-
-<script>
-  getGeoLocation();
-</script>
-
+<% if cookies[:lat_lng] %>
+   <script>
+     deleteCookie();
+     getGeoLocation();
+   </script>
+ <% else %>
+   <script>
+     getGeoLocation();
+   </script>
+ <% end %>
 
 	<div class="jumbotron jumbotron-fluid text-center partlyCloudyBG">
 		<div class="container">
