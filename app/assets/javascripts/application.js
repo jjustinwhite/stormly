@@ -44,7 +44,7 @@ function setGeoCookie(position) {
               success: function (data) { 
               	//get formatted address
                      
-                     var formattedAddress = data["results"][0]["formatted_address"];
+                     var formattedAddress = data.results[0].formatted_address;
                   //set location arrow icon, formatted address as button text, enable button
                      document.getElementById("spinnerIcon").className = "fa fa-location-arrow";      
                      document.getElementById("btnText").innerHTML = "&nbsp; " +  formattedAddress;

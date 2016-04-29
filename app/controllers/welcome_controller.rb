@@ -27,13 +27,13 @@ require 'forecast_io'
 	  	result = Geocoder.search(@latitude+","+@longitude)
 
 
-  		@myState = result[0].data["address_components"][5]["short_name"]
-		@myAddress = result[0].data["formatted_address"]
-		cityType = result[0].data["address_components"][2]["types"][0]
+  		@myState = result[0].address_components[5]["short_name"]
+		@myAddress = result[0].formatted_address
+		cityType = result[0].address_components[2]["types"][0]
 	  	if cityType == "neighborhood" 
-	  		@myCity = result[0].data["address_components"][3]["long_name"]
+	  		@myCity = result[0].address_components[3]["long_name"]
 	  	else 
-	  		@myCity = result[0].data["address_components"][2]["short_name"]
+	  		@myCity = result[0].address_components[2]["short_name"]
 	  	end		
 
  
